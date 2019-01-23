@@ -18,18 +18,6 @@ export default {
           console.log("init");
         },
 
-        @on('didInsertElement')
-        @observes('socialStyle','tilesStyle')
-        setupListStyle() {
-          if (!this.$()) {return;}
-          this.$().parents('#list-area').toggleClass('social-style', this.get('socialStyle'));
-          this.$().parents('#list-area').toggleClass('tiles-style', this.get('tilesStyle'));
-          this.$("tbody").toggleClass('grid', this.get('tilesStyle'));
-          if ( !this.$( ".grid-sizer" ).length && this.get('tilesStyle')){
-            this.$(".grid").prepend("<div class='grid-sizer'></div>");
-          };
-        },
-
       });
 
 
@@ -40,6 +28,7 @@ export default {
         @on('init')
         _setupProperties() {
           this.set('tagName', 'div');
+          this.$(".topic-list-item").wrapAll( "<div class='mansory' />");
         }
 
       });
