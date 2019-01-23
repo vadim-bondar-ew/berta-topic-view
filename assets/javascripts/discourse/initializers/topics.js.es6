@@ -18,10 +18,10 @@ export default {
           console.log("init");
         },
 
-        // @on('didInsertElement')
-        // setupListStyle() {
-        //   this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
-        // }
+        @on('didInsertElement')
+        setupListStyle() {
+          this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
+        }
 
       });
 
@@ -34,11 +34,6 @@ export default {
         _setupProperties() {
           this.set('tagName', 'div');
         },
-
-        @on('didInsertElement')
-        setupListStyle() {
-          this.$().wrapAll("<div class='mansory'></div>");
-        }
 
       });
 
