@@ -40,6 +40,7 @@ export default {
         @on('init')
         _setupProperties() {
           this.set('tagName', 'div');
+          this.$().wrap("<div class='mansory'></div>");
         }
 
       });
