@@ -15,6 +15,7 @@ export default {
           console.log("init");
           console.log("init");
           console.log("init");
+          console.log("init");
         }
 
       });
