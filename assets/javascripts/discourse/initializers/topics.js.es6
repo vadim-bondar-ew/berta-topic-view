@@ -12,10 +12,9 @@ export default {
 
         @on('init')
         setup() {
-          console.log("init");
-          console.log("init");
-          console.log("init");
-          console.log("init");
+          Ember.run.scheduleOnce('afterRender', this, () => {
+            this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
+          });
         },
 
         @on('didInsertElement')
@@ -31,9 +30,23 @@ export default {
         // Lifecyle logic
 
         @on('init')
+        setup() {
+          Ember.run.scheduleOnce('afterRender', this, this.applyOrdering);
+        },
+
+        @on('init')
         _setupProperties() {
           this.set('tagName', 'div');
         },
+
+        applyOrdering() {
+          var screenWidth = this.$(window).innerWidth() / 2;
+          if (this.$().offset().left > screenWidth) {
+            this.$().addClass("right-column");
+          }else{
+            this.$().addClass("left-column");
+          }
+        }
 
       });
 
