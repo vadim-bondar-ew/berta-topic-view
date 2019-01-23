@@ -18,6 +18,11 @@ export default {
           console.log("init");
         },
 
+        // @on('didInsertElement')
+        // setupListStyle() {
+        //   this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
+        // }
+
       });
 
 
@@ -32,7 +37,7 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
-          this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
+          this.$().wrapAll("<div class='mansory'></div>");
         }
 
       });
