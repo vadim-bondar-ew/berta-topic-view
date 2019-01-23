@@ -5,6 +5,7 @@
 }
 
 .mansory {
+  box-sizing: border-box;
   column-count: 2;
   column-gap: 40px;
   column-rule: 1px solid #c4cdd5;
@@ -28,8 +29,7 @@ table.topic-list thead {
   margin-top: 40px;
 }
 
-.topic-list-item.right-column::before {
-  z-index: 1000;
+.topic-list-item.right-column::after {
   content: '';
   display: block;
   position: absolute;
@@ -45,7 +45,6 @@ table.topic-list thead {
 }
 
 .topic-list-item.left-column::after {
-  z-index: 1000;
   content: '';
   display: block;
   position: absolute;
@@ -67,10 +66,8 @@ table.topic-list thead {
 
 .topic-list-item.bulk.left-column::after {
   border-left: 15px solid #92d6b4;
-  z-index: 1000;
 }
 
-.topic-list-item.bulk.right-column::before {
+.topic-list-item.bulk.right-column::after {
   border-right: 15px solid #92d6b4;
-  z-index: 1000;
 }
