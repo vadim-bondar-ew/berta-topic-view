@@ -1,0 +1,62 @@
+.mansory {
+  column-count: 2;
+  column-gap: 40px;
+  column-rule: 1px solid #c4cdd5;
+  margin: 0 20px;
+}
+
+.topic-list-item {
+  padding: 15px;
+  background: #e9edf2;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.topic-list-item.top-margin {
+  margin-top: 40px;
+}
+
+.topic-list-item.right-column::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -15px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid #e9edf2;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.topic-list-item.left-column::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -15px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #e9edf2;
+}
+
+.topic-list-item.bulk {
+  background: #92d6b4;
+  color: #ffffff;
+}
+
+.topic-list-item.bulk.left-column::after {
+  border-left: 15px solid #92d6b4;
+}
+
+.topic-list-item.bulk.right-column::before {
+  border-right: 15px solid #92d6b4;
+}
