@@ -8,7 +8,6 @@
   column-count: 2;
   column-gap: 40px;
   column-rule: 1px solid #c4cdd5;
-  margin: 0 20px;
 }
 
 .topic-list-item {
@@ -16,8 +15,12 @@
   background: #e9edf2;
   border-radius: 4px;
   display: inline-block;
-  width: 100%;
+  width: calc(100%-30px);
   margin: 5px 0;
+}
+
+table.topic-list thead {
+  display: none;
 }
 
 .topic-list-item.top-margin {
