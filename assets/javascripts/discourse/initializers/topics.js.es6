@@ -28,7 +28,11 @@ export default {
         @on('init')
         _setupProperties() {
           this.set('tagName', 'div');
-          this.$(".topic-list-item").wrapAll( "<div class='mansory' />");
+        },
+
+        @on('didInsertElement')
+        setupListStyle() {
+          this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
         }
 
       });
