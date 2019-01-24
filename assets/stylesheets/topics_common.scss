@@ -56,10 +56,13 @@ table.topic-list tbody {
   border: none;
 }
 
-table.topic-list .link-top-line a {
-  font-size: 18px;
-  color: #92d6b4;
+table.topic-list .link-top-line {
   display: block;
+}
+
+table.topic-list .link-top-line a.raw-topic-link {
+  font-size: 18px;
+  color: #92d6b4 !important;
 }
 
 table.topic-list .category-name {
@@ -69,7 +72,7 @@ table.topic-list .category-name {
 
 table.topic-list .topic-excerpt {
   color: #637381;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .right-column:first-child, :not(.right-column) + .right-column {
