@@ -51,3 +51,27 @@
 table.topic-list thead {
   display: none;
 }
+
+table.topic-list tbody {
+  border: none;
+}
+
+table.topic-list .link-top-line {
+  font-size: 22px;
+  color: #92d6b4;
+  display: block;
+}
+
+table.topic-list .category-name {
+  color: #919eab;
+  font-size: 14px;
+}
+
+table.topic-list .topic-excerpt {
+  color: #637381;
+  font-size: 15px;
+}
+
+.right-column:first-child, :not(.right-column) + .right-column {
+  margin-top: 45px;
+}
