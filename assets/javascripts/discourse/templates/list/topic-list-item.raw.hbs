@@ -37,16 +37,17 @@
     {{raw "list/topic-excerpt" topic=topic}}
   {{/if}}
 </td>
+<div class="topic-info-row">
+    {{#if showPosters}}
+      {{raw "list/posters-column" posters=topic.posters}}
+    {{/if}}
 
-{{#if showPosters}}
-  {{raw "list/posters-column" posters=topic.posters}}
-{{/if}}
+    {{raw "list/posts-count-column" topic=topic}}
 
-{{raw "list/posts-count-column" topic=topic}}
-
-{{#if showParticipants}}
-  {{raw "list/posters-column" posters=topic.participants}}
-{{/if}}
+    {{#if showParticipants}}
+      {{raw "list/posters-column" posters=topic.participants}}
+    {{/if}}
+</div>
 
 {{#if showLikes}}
   <td class="num likes">
