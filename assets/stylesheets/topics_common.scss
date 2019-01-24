@@ -75,6 +75,30 @@ table.topic-list .topic-excerpt {
   font-size: 14px;
 }
 
+.topic-list-item .relative-date {
+  display: none;
+}
+
+.topic-statuses {
+  float: none;
+}
+
+.topic-info-row .number {
+  font-size: 14px;
+  color: #454f5b;
+}
+
+.topic-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 12px;
+  color: #96a2af;
+  font-size: 14px;
+}
+
 .right-column:first-child, :not(.right-column) + .right-column {
   margin-top: 45px;
 }
+
