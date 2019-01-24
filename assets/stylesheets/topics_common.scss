@@ -1,61 +1,51 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 .mansory {
   column-count: 2;
-  column-gap: 10px;
+  column-gap: 20px;
   column-rule: 1px solid #c4cdd5;
-  margin: 0 20px;
+
 }
 
 .topic-list-item {
-  display: inline-block;
-  width: 100%;
-  margin: 5px 0;
-  position: relative;
-}
-
-.left-column .container {
-  padding: 15px;
   border-radius: 4px;
   background: #e9edf2;
-  float: left;
-  width: calc(100% - 30px);
+  display:inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.left-column .arrow {
-  width: 30px;
-  right: 0;
+.arrow {
+  width: 0px;
+  position: absolute;
   top: 50%;
   margin-top: -15px;
-  position: absolute;
-  border-top: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #e9edf2;
 }
 
-.right-column .container {
-  padding: 15px;
-  border-radius: 4px;
-  background: #e9edf2;
-  float: right;
+.topic-list-item.right-column {
+  margin-left: 30px;
   width: calc(100% - 30px);
 }
 
 .right-column .arrow {
-  width: 30px;
-  left: 0;
-  top: 50%;
-  margin-top: -15px;
-  position: absolute;
+  left: -30px;
   border-top: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-right: 15px solid #e9edf2;
+}
+
+.topic-list-item.left-column {
+  width: calc(100% - 30px);
+}
+
+.left-column .arrow {
+  right: -30px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #e9edf2;
 }
 
 table.topic-list thead {

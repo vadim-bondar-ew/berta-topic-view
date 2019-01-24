@@ -45,7 +45,7 @@ export default {
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
-          }else{
+          } else {
             this.$().addClass("left-column");
           }
         }
