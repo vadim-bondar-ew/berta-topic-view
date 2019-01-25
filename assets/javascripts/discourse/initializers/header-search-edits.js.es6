@@ -21,6 +21,7 @@ export default {
                         return this.panelContents();
                     } else {
                         return this.attach('menu-panel', {
+                            maxWidth: '100%',
                             contents: () => this.panelContents()
                         });
                     }
