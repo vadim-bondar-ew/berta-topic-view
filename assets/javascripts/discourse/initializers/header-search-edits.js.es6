@@ -30,10 +30,10 @@ export default {
                     results.push(h("div.test", 'Test'));
                     console.log(results);
                     if (this.state.formFactor === 'header') {
-                        return this.panelContents();
+                        return results;
                     } else {
                         return this.attach('menu-panel', {
-                            contents: () => this.panelContents()
+                            contents: () => results
                         });
                     }
                 }
