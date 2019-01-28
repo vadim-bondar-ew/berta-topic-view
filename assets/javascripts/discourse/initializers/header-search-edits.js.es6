@@ -36,11 +36,19 @@ export default {
                 }
             });
 
-            // api.decorateWidget('home-logo:after', function(helper) {
-            //     console.log('home-logo:after section call');
-            //     console.log(this.$('.menu-panel.drop-down'));
-            //     console.log($('.menu-panel.drop-down'));
-            // });
+            api.modifyClass('component:search-text-field', {
+
+                @on('didInsertElement')
+                initSizeWatcher() {
+                    Ember.run.scheduleOnce('afterRender', () => {
+                        console.log(this.$('.menu-panel.drop-down'));
+                        console.log($('.menu-panel.drop-down'));
+                        // this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    });
+                },
+
+            });
+
         });
 
     }
