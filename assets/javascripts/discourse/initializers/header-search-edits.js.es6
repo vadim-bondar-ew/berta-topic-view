@@ -26,6 +26,7 @@ export default {
             api.reopenWidget('search-menu', {
                 html() {
                     this.panelContents().push(h("a", { attributes: { "href": "#" } }, "x"));
+                    console.log(this.panelContents());
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
                     } else {
