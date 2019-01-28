@@ -25,6 +25,15 @@ export default {
             });
 
             api.reopenWidget('search-menu', {
+                @on('didInsertElement')
+                initSizeWatcher() {
+                    Ember.run.scheduleOnce('afterRender', () => {
+                        console.log(this.$('.menu-panel.drop-down'));
+                        console.log($('.menu-panel.drop-down'));
+                        this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    });
+                },
+                
                 html() {
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
