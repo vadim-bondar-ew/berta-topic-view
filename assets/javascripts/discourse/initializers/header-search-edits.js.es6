@@ -13,6 +13,13 @@ export default {
 
             api.modifyClass('component:site-header', {
 
+                @on('didInsertElement')
+                initSizeWatcher() {
+                    Ember.run.scheduleOnce('afterRender', () => {
+                            $('.menu-panel .drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    });
+                },
+
             });
 
             api.reopenWidget('search-menu', {
@@ -21,7 +28,6 @@ export default {
                         return this.panelContents();
                     } else {
                         return this.attach('menu-panel', {
-                            maxWidth: '100%',
                             contents: () => this.panelContents()
                         });
                     }
