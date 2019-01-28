@@ -25,18 +25,7 @@ export default {
             });
 
             api.reopenWidget('search-menu', {
-                @on('didInsertElement')
-                initSizeWatcher() {
-                    Ember.run.scheduleOnce('afterRender', () => {
-                        console.log(this.$('.menu-panel.drop-down'));
-                        console.log($('.menu-panel.drop-down'));
-                        this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
-                    });
-                },
-
                 html() {
-                    console.log(this.$('.menu-panel.drop-down'));
-                    console.log($('.menu-panel.drop-down'));
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
                     } else {
@@ -46,6 +35,12 @@ export default {
                     }
                 }
             });
+        });
+
+        api.decorateWidget('home-logo:after', function(helper) {
+            console.log('home-logo:after section call');
+            console.log(this.$('.menu-panel.drop-down'));
+            console.log($('.menu-panel.drop-down'));
         });
     }
 };
