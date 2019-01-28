@@ -38,8 +38,8 @@ export default {
 
             api.modifyClass('component:search-text-field', {
 
-                @on('didInsertElement')
-                initSizeWatcher() {
+                @on("didInsertElement")
+                becomeFocused() {
                     Ember.run.scheduleOnce('afterRender', () => {
                         console.log("search render");
                         console.log(this.$());
