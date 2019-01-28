@@ -25,9 +25,8 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
-                    console.log(this.panelContents());
                     let results = this.panelContents();
-                    results.push(h("div.test", 'Test'));
+                    results.push(h("a.close-search-panel", 'x'));
                     console.log(results);
                     if (this.state.formFactor === 'header') {
                         return results;
