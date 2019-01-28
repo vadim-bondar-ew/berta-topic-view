@@ -24,40 +24,6 @@ export default {
             });
 
             api.reopenWidget('search-menu', {
-                panelContents() {
-                    const contextEnabled = searchData.contextEnabled;
-
-                    let searchInput = [
-                        this.attach("search-term", { value: searchData.term, contextEnabled })
-                    ];
-                    if (searchData.term && searchData.loading) {
-                        searchInput.push(h("div.searching", h("div.spinner")));
-                    }
-
-                    const results = [
-                        h("div.search-input", searchInput),
-                        this.attach("search-context", {
-                            contextEnabled,
-                            url: this.fullSearchUrl({ expanded: true })
-                        })
-                    ];
-
-                    if (searchData.term && !searchData.loading) {
-                        results.push(
-                            this.attach("search-menu-results", {
-                                term: searchData.term,
-                                noResults: searchData.noResults,
-                                results: searchData.results,
-                                invalidTerm: searchData.invalidTerm,
-                                searchContextEnabled: searchData.contextEnabled
-                            })
-                        );
-                    }
-                    results.push(h("a", { attributes: { "href": "#" } }, "x"));
-                    
-                    return results;
-                },
-
                 html() {
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
