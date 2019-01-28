@@ -25,7 +25,7 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
-                    let results = [];
+                    let results = this.panelContents();
                     // results.push(h("a.close-search-panel", { attributes: {'href': '#', 'onclick': this.sendWidgetAction("toggleSearchMenu")} }, 'x'));
                     results.push(
                         this.attach("link", {
@@ -34,8 +34,6 @@ export default {
                             label: "x"
                         })
                     );
-                    results.push(this.panelContents());
-                    console.log(results);
 
                     if (this.state.formFactor === 'header') {
                         return results;
