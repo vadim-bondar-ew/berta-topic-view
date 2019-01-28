@@ -35,12 +35,13 @@ export default {
                     }
                 }
             });
+
+            api.decorateWidget('home-logo:after', function(helper) {
+                console.log('home-logo:after section call');
+                console.log(this.$('.menu-panel.drop-down'));
+                console.log($('.menu-panel.drop-down'));
+            });
         });
 
-        api.decorateWidget('home-logo:after', function(helper) {
-            console.log('home-logo:after section call');
-            console.log(this.$('.menu-panel.drop-down'));
-            console.log($('.menu-panel.drop-down'));
-        });
     }
 };
