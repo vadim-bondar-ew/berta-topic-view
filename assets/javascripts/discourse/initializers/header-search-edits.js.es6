@@ -16,7 +16,7 @@ export default {
                 @on('didInsertElement')
                 initSizeWatcher() {
                     Ember.run.scheduleOnce('afterRender', () => {
-                            $('.menu-panel .drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                            $('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
                 },
 
