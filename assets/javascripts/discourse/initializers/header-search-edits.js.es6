@@ -33,8 +33,10 @@ export default {
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
                 },
-                
+
                 html() {
+                    console.log(this.$('.menu-panel.drop-down'));
+                    console.log($('.menu-panel.drop-down'));
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
                     } else {
