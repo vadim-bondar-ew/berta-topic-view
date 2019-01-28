@@ -25,13 +25,12 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
-                    this.panelContents().push(h("a", { attributes: { "href": "#" } }, "x"));
-                    console.log(this.panelContents());
+                    let results = this.panelContents().push(h("a", { attributes: { "href": "#" } }, "x"));
                     if (this.state.formFactor === 'header') {
-                        return this.panelContents();
+                        return results;
                     } else {
                         return this.attach('menu-panel', {
-                            contents: () => this.panelContents()
+                            contents: () => results
                         });
                     }
                 }
