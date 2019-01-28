@@ -1,5 +1,6 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { wantsNewWindow } from 'discourse/lib/intercept-click';
+import { h } from "virtual-dom";
 import { on } from 'ember-addons/ember-computed-decorators';
 
 export default {
