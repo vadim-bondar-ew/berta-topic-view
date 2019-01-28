@@ -26,7 +26,7 @@ export default {
             api.reopenWidget('search-menu', {
                 html() {
                     let results = [];
-                    results.push(h("a.close-search-panel", 'x'));
+                    results.push(h("a.close-search-panel", { attributes: {'href': '#', 'click': () => this.sendWidgetAction("toggleSearchMenu")} }, 'x'));
                     results.push(this.panelContents());
                     console.log(results);
 
