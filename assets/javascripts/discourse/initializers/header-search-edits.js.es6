@@ -25,19 +25,16 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
-                    // let results = this.panelContents();
-                    // results.push(h("a.close-search-panel", 'x'));
-                    // console.log(results);
-
-                    this.attach("menu-panel", {
-                        contents: () => [h("a.close-search-panel", 'x')]
-                    });
+                    let results = [];
+                    results.push(h("a.close-search-panel", 'x'));
+                    results.push(this.panelContents());
+                    console.log(results);
 
                     if (this.state.formFactor === 'header') {
-                        return this.panelContents();
+                        return results;
                     } else {
                         return this.attach('menu-panel', {
-                            contents: () => this.panelContents()
+                            contents: () => results
                         });
                     }
                 }
