@@ -29,7 +29,6 @@ export default {
                     // results.push(h("a.close-search-panel", { attributes: {'href': '#', 'onclick': this.sendWidgetAction("toggleSearchMenu")} }, 'x'));
                     results.push(
                         this.attach("link", {
-                            action: this.sendWidgetAction("toggleSearchMenu"),
                             className: "close-search-panel",
                             title: "x",
                             label: "x"
