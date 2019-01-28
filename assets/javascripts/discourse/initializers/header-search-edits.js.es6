@@ -40,6 +40,7 @@ export default {
 
                 @on("didInsertElement")
                 becomeFocused() {
+                    console.log("search render");
                     Ember.run.scheduleOnce('afterRender', () => {
                         console.log("search render");
                         console.log(this.$());
