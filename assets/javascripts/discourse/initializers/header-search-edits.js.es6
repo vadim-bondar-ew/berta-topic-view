@@ -25,6 +25,10 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
+                    console.log(this.panelContents());
+                    let results = this.panelContents();
+                    results.push(h("div.search-input", searchInput));
+                    console.log(results);
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
                     } else {
