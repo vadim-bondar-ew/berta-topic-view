@@ -16,9 +16,7 @@ export default {
                 @on('didInsertElement')
                 initSizeWatcher() {
                     Ember.run.scheduleOnce('afterRender', () => {
-                        console.log(this.$('.menu-panel.drop-down'));
-                        console.log($('.menu-panel.drop-down'));
-                            this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                        this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
                 },
 
@@ -27,7 +25,7 @@ export default {
             api.reopenWidget('search-menu', {
                 html() {
                     console.log('search-menu');
-                    console.log(this.$());
+                    console.log(this.panelContents());
 
                     if (this.state.formFactor === 'header') {
                         return this.panelContents();
