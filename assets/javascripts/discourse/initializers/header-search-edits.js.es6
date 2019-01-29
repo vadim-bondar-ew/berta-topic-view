@@ -57,7 +57,7 @@ export default {
                             panels.push(
                                 this.attach("search-menu", {contextEnabled: state.contextEnabled})
                             );
-                            console.log(panels);
+                            console.log(panels.find(w => w.name == 'search-menu'));
                         } else if (state.hamburgerVisible) {
                             panels.push(this.attach("hamburger-menu"));
                         } else if (state.userVisible) {
