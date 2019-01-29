@@ -59,6 +59,7 @@ export default {
                         }));
                     }
                     contents = contents.concat(...corePanelContents.call(this));
+                    console.log("11111");
                     console.log(contents);
 
                     let results = contents.find(w => w.name == 'search-menu-results');
