@@ -58,9 +58,10 @@ export default {
                             action: 'showResults'
                         }));
                     }
-                    contents = contents.concat(...corePanelContents.call(this));
                     console.log("11111");
                     console.log(contents);
+                    
+                    contents = contents.concat(...corePanelContents.call(this));
 
                     let results = contents.find(w => w.name == 'search-menu-results');
                     if (results && results.attrs.results) {
