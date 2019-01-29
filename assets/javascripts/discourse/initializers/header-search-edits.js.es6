@@ -23,6 +23,9 @@ export default {
 
             });
 
+            const searchMenuWidget = api.container.factoryFor('widget:search-menu');
+            const corePanelContents = searchMenuWidget.class.prototype['panelContents'];
+
             api.reopenWidget('search-menu', {
                 html() {
                     let results = this.panelContents();
