@@ -59,13 +59,15 @@ export default {
                         }));
                     }
                     contents = contents.concat(...corePanelContents.call(this));
+                    console.log(contents);
+
                     let results = contents.find(w => w.name == 'search-menu-results');
                     if (results && results.attrs.results) {
                         $('.search-menu.search-header').addClass('has-results');
                     } else {
                         $('.search-menu.search-header').removeClass('has-results');
                     }
-                    $('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    // $('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     if (formFactor === 'menu' || showHeaderResults) {
                         return contents;
                     } else {
