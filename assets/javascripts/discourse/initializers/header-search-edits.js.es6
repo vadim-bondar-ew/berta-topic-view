@@ -19,14 +19,14 @@ export default {
                 }
 
             });
-            
+
             const forceContextEnabled = ["category", "user", "private_messages"];
             let additionalPanels = [];
 
             api.reopenWidget('header', {
 
                 html(attrs, state) {
-                    console.log("1111");
+                    console.log($('.search-menu'));
                     let contents = () => {
                         const panels = [
                             this.attach("header-buttons", attrs),
