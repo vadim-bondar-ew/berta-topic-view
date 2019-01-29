@@ -13,7 +13,9 @@ export default {
 
                 @on('didInsertElement')
                 initSizeWatcher() {
+                    console.log($('.panel > .search-menu'));
                     Ember.run.scheduleOnce('afterRender', () => {
+                        console.log($('.panel > .search-menu'));
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
                 }
@@ -57,9 +59,6 @@ export default {
                             panels.push(
                                 this.attach("search-menu", {contextEnabled: state.contextEnabled})
                             );
-                            let search = panels.find(w => w.name == 'search-menu'));
-                            search.append("<div class='test'></div>");
-                            console.log(panels);
                         } else if (state.hamburgerVisible) {
                             panels.push(this.attach("hamburger-menu"));
                         } else if (state.userVisible) {
