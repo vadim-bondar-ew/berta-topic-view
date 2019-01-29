@@ -57,6 +57,7 @@ export default {
                             panels.push(
                                 this.attach("search-menu", {contextEnabled: state.contextEnabled})
                             );
+                            console.log(panels);
                         } else if (state.hamburgerVisible) {
                             panels.push(this.attach("hamburger-menu"));
                         } else if (state.userVisible) {
@@ -65,7 +66,7 @@ export default {
                         if (this.site.mobileView) {
                             panels.push(this.attach("header-cloak"));
                         }
-                        console.log(additionalPanels);
+
                         additionalPanels.map(panel => {
                             if (this.state[panel.toggle]) {
                                 panels.push(
