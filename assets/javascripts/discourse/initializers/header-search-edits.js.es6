@@ -60,10 +60,12 @@ export default {
                     }
                     console.log("11111");
                     console.log(contents);
-                    
+
                     contents = contents.concat(...corePanelContents.call(this));
 
                     let results = contents.find(w => w.name == 'search-menu-results');
+                    console.log("Element");
+                    console.log($('.menu-panel.drop-down'));
                     if (results && results.attrs.results) {
                         $('.search-menu.search-header').addClass('has-results');
                     } else {
