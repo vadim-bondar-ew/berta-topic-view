@@ -20,6 +20,7 @@ export default {
 
             });
             
+            const forceContextEnabled = ["category", "user", "private_messages"];
             let additionalPanels = [];
 
             api.reopenWidget('header', {
