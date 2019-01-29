@@ -65,6 +65,7 @@ export default {
                     } else {
                         $('.search-menu.search-header').removeClass('has-results');
                     }
+                    $('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     if (formFactor === 'menu' || showHeaderResults) {
                         return contents;
                     } else {
@@ -73,7 +74,7 @@ export default {
                         });
                     }
                 }
-                
+
             });
 
         });
