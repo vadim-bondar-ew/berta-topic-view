@@ -65,7 +65,7 @@ export default {
                         if (this.site.mobileView) {
                             panels.push(this.attach("header-cloak"));
                         }
-
+                        console.log(additionalPanels);
                         additionalPanels.map(panel => {
                             if (this.state[panel.toggle]) {
                                 panels.push(
