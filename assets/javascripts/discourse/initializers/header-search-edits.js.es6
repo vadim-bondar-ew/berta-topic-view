@@ -13,9 +13,7 @@ export default {
 
                 @on('didInsertElement')
                 initSizeWatcher() {
-                    console.log($('.panel > .search-menu'));
                     Ember.run.scheduleOnce('afterRender', () => {
-                        console.log($('.panel > .search-menu'));
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
                 }
@@ -28,7 +26,6 @@ export default {
             api.reopenWidget('header', {
 
                 html(attrs, state) {
-                    console.log($('.search-menu'));
                     let contents = () => {
                         const panels = [
                             this.attach("header-buttons", attrs),
@@ -93,6 +90,11 @@ export default {
 
             api.reopenWidget('search-menu', {
                 html() {
+                    this.attach("link", {
+                        className: "close-search-panel",
+                        title: "x",
+                        label: "x"
+                    });
                     let results = this.panelContents();
                     // results.push(h("a.close-search-panel", { attributes: {'href': '#', 'onclick': this.sendWidgetAction("toggleSearchMenu")} }, 'x'));
                     results.push(
