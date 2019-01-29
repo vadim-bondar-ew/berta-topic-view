@@ -19,6 +19,8 @@ export default {
                 }
 
             });
+            
+            let additionalPanels = [];
 
             api.reopenWidget('header', {
 
