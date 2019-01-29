@@ -13,15 +13,78 @@ export default {
 
                 @on('didInsertElement')
                 initSizeWatcher() {
-                    console.log("After render");
                     Ember.run.scheduleOnce('afterRender', () => {
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
-                },
-
-
+                }
 
             });
+
+            api.reopenWidget('header', {
+
+                html(attrs, state) {
+                    console.log("1111");
+                    let contents = () => {
+                        const panels = [
+                            this.attach("header-buttons", attrs),
+                            this.attach("header-icons", {
+                                hamburgerVisible: state.hamburgerVisible,
+                                userVisible: state.userVisible,
+                                searchVisible: state.searchVisible,
+                                ringBackdrop: state.ringBackdrop,
+                                flagCount: attrs.flagCount,
+                                user: this.currentUser
+                            })
+                        ];
+
+                        if (state.searchVisible) {
+                            const contextType = this.searchContextType();
+
+                            if (state.searchContextType !== contextType) {
+                                state.contextEnabled = undefined;
+                                state.searchContextType = contextType;
+                            }
+
+                            if (state.contextEnabled === undefined) {
+                                if (forceContextEnabled.includes(contextType)) {
+                                    state.contextEnabled = true;
+                                }
+                            }
+
+                            panels.push(
+                                this.attach("search-menu", {contextEnabled: state.contextEnabled})
+                            );
+                        } else if (state.hamburgerVisible) {
+                            panels.push(this.attach("hamburger-menu"));
+                        } else if (state.userVisible) {
+                            panels.push(this.attach("user-menu"));
+                        }
+                        if (this.site.mobileView) {
+                            panels.push(this.attach("header-cloak"));
+                        }
+
+                        additionalPanels.map(panel => {
+                            if (this.state[panel.toggle]) {
+                                panels.push(
+                                    this.attach(
+                                        panel.name,
+                                        panel.transformAttrs.call(this, attrs, state)
+                                    )
+                                );
+                            }
+                        });
+
+                        return panels;
+                    };
+                    let contentsAttrs = { contents, minimized: !!attrs.topic };
+                    return h(
+                        "div.wrap",
+                        this.attach("header-contents", $.extend({}, attrs, contentsAttrs))
+                    );
+                }
+
+            });
+
 
             api.reopenWidget('search-menu', {
                 html() {
