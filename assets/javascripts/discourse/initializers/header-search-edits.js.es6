@@ -14,11 +14,21 @@ export default {
 
             api.modifyClass('component:site-header', {
 
+                toggleVisibility: function(topicToggled) {
+                    console.log('11111');
+                },
+
                 @on('didInsertElement')
                 initSizeWatcher() {
                     Ember.run.scheduleOnce('afterRender', () => {
-                        this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
-                    });
+                        this.toggleVisibility();
+                    })
+                    $(window).on('resize', Ember.run.bind(this, this.toggleVisibility));
+                    this.appEvents.on('header:show-topic', () => this.toggleVisibility(true));
+                    this.appEvents.on('header:hide-topic', () => this.toggleVisibility(true));
+                    // Ember.run.scheduleOnce('afterRender', () => {
+                    //     this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    // });
                 },
 
             });
