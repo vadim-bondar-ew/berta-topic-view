@@ -22,7 +22,11 @@ export default {
                 afterRender() {
 
                     console.log('after render header');
-                    console.log($('.search-menu'));
+                    let searchMenu = $('.search-menu');
+                    if (searchMenu.length > 0) {
+                        console.log(searchMenu);
+                    }
+
                     const $menuPanels = $(".menu-panel");
                     if ($menuPanels.length === 0) {
                         if (this.site.mobileView) {
