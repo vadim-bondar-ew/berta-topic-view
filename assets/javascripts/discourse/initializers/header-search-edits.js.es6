@@ -16,6 +16,132 @@ export default {
                     Ember.run.scheduleOnce('afterRender', () => {
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
                     });
+                },
+
+                afterRender() {
+
+                    console.log('after render header');
+                    const $menuPanels = $(".menu-panel");
+                    if ($menuPanels.length === 0) {
+                        if (this.site.mobileView) {
+                            this._animate = true;
+                        }
+                        return;
+                    }
+
+                    const $window = $(window);
+                    const windowWidth = parseInt($window.width());
+
+                    const headerWidth = $("#main-outlet .container").width() || 1100;
+                    const remaining = parseInt((windowWidth - headerWidth) / 2);
+                    const viewMode = remaining < 50 ? "slide-in" : "drop-down";
+
+                    $menuPanels.each((idx, panel) => {
+                        const $panel = $(panel);
+                        const $headerCloak = $(".header-cloak");
+                        let width = parseInt($panel.attr("data-max-width") || 300);
+                        if (windowWidth - width < 50) {
+                            width = windowWidth - 50;
+                        }
+                        if (this._panMenuOffset) {
+                            this._panMenuOffset = -width;
+                        }
+
+                        $panel.removeClass("drop-down slide-in").addClass(viewMode);
+                        if (this._animate || this._panMenuOffset !== 0) {
+                            $headerCloak.css("opacity", 0);
+                            if (
+                                this.site.mobileView &&
+                                $panel.parent(this._leftMenuClass()).length > 0
+                            ) {
+                                this._panMenuOrigin = "left";
+                                $panel.css("left", -windowWidth);
+                            } else {
+                                this._panMenuOrigin = "right";
+                                $panel.css("right", -windowWidth);
+                            }
+                        }
+
+                        const $panelBody = $(".panel-body", $panel);
+                        // 2 pixel fudge allows for firefox subpixel sizing stuff causing scrollbar
+                        let contentHeight =
+                            parseInt($(".panel-body-contents", $panel).height()) + 2;
+
+                        // We use a mutationObserver to check for style changes, so it's important
+                        // we don't set it if it doesn't change. Same goes for the $panelBody!
+                        const style = $panel.prop("style");
+
+                        if (viewMode === "drop-down") {
+                            const $buttonPanel = $("header ul.icons");
+                            if ($buttonPanel.length === 0) {
+                                return;
+                            }
+
+                            // These values need to be set here, not in the css file - this is to deal with the
+                            // possibility of the window being resized and the menu changing from .slide-in to .drop-down.
+                            if (style.top !== "100%" || style.height !== "auto") {
+                                $panel.css({ top: "100%", height: "auto" });
+                            }
+
+                            // adjust panel height
+                            const fullHeight = parseInt($window.height());
+                            const offsetTop = $panel.offset().top;
+                            const scrollTop = $window.scrollTop();
+
+                            if (
+                                contentHeight + (offsetTop - scrollTop) + PANEL_BODY_MARGIN >
+                                fullHeight ||
+                                this.site.mobileView
+                            ) {
+                                contentHeight =
+                                    fullHeight - (offsetTop - scrollTop) - PANEL_BODY_MARGIN;
+                            }
+                            if ($panelBody.height() !== contentHeight) {
+                                $panelBody.height(contentHeight);
+                            }
+                            $("body").addClass("drop-down-mode");
+                        } else {
+                            if (this.site.mobileView) {
+                                $headerCloak.show();
+                            }
+
+                            const menuTop = this.site.mobileView ? headerTop() : headerHeight();
+
+                            let height;
+                            const winHeightOffset = 16;
+                            let initialWinHeight = window.innerHeight
+                                ? window.innerHeight
+                                : $(window).height();
+                            const winHeight = initialWinHeight - winHeightOffset;
+                            if (menuTop + contentHeight < winHeight && !this.site.mobileView) {
+                                height = contentHeight + "px";
+                            } else {
+                                height = winHeight - menuTop;
+                            }
+
+                            if ($panelBody.prop("style").height !== "100%") {
+                                $panelBody.height("100%");
+                            }
+                            if (style.top !== menuTop + "px" || style.height !== height) {
+                                $panel.css({ top: menuTop + "px", height });
+                                $(".header-cloak").css({ top: menuTop + "px" });
+                            }
+                            $("body").removeClass("drop-down-mode");
+                        }
+
+                        $panel.width(width);
+                        if (this._animate) {
+                            $panel.addClass("animate");
+                            $headerCloak.addClass("animate");
+                            this._scheduledRemoveAnimate = Ember.run.later(() => {
+                                $panel.removeClass("animate");
+                                $headerCloak.removeClass("animate");
+                            }, 200);
+                        }
+                        $panel.css({ right: "", left: "" });
+                        $headerCloak.css("opacity", 0.5);
+                        this._animate = false;
+                    });
                 }
 
             });
