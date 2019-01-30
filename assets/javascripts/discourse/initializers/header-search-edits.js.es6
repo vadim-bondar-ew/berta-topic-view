@@ -20,6 +20,8 @@ export default {
                 },
 
                 afterRender() {
+                    console.log("1111");
+
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
                         let customBlock = $('.custom-block');
