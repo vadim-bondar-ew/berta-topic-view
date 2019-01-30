@@ -9,6 +9,7 @@ export default {
 
         withPluginApi('0.8.9', api => {
 
+            const PANEL_BODY_MARGIN = 30;
             api.modifyClass('component:site-header', {
 
                 @on('didInsertElement')
@@ -21,6 +22,7 @@ export default {
                 afterRender() {
 
                     console.log('after render header');
+                    console.log($('.search-menu'));
                     const $menuPanels = $(".menu-panel");
                     if ($menuPanels.length === 0) {
                         if (this.site.mobileView) {
