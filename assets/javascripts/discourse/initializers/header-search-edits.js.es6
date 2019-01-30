@@ -20,11 +20,9 @@ export default {
                 },
 
                 afterRender() {
-
-                    console.log('after render header');
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
-                        console.log(searchMenu);
+                        $('.panel-body').append("<div class='custom-block'>Test block</div>");
                     }
 
                     const $menuPanels = $(".menu-panel");
