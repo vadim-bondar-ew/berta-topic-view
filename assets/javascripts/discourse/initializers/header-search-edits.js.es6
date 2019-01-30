@@ -41,7 +41,7 @@ export default {
 
                     const headerWidth = $("#main-outlet .container").width() || 1100;
                     const remaining = parseInt((windowWidth - headerWidth) / 2);
-                    const viewMode = remaining < 50 ? "slide-in" : "drop-down";
+                    const viewMode = remaining < 50 ? "drop-down" : "drop-down";
 
                     $menuPanels.each((idx, panel) => {
                         const $panel = $(panel);
