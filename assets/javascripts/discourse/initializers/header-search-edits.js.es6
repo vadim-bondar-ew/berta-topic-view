@@ -22,7 +22,10 @@ export default {
                 afterRender() {
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
-                        $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
+                        let panelBody = $('.panel-body');
+                        if (panelBody.length <= 0 ) {
+                            $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
+                        }
                     }
 
                     const $menuPanels = $(".menu-panel");
