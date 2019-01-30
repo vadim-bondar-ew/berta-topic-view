@@ -25,7 +25,9 @@ export default {
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
                         let customBlock = $('.custom-block');
-                        if (customBlock.length <= 0 ) {
+                        let results = $('.results');
+                        let noResults = $('.no-results');
+                        if (customBlock.length == 0 && results.length > 0 && noResults.length == 0 ) {
                             $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
                         }
                     }
