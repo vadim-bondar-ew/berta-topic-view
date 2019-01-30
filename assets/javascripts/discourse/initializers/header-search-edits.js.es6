@@ -28,7 +28,12 @@ export default {
                         let results = $('.results');
                         let noResults = $('.no-results');
                         if (customBlock.length == 0 && results.length > 0 && noResults.length == 0 ) {
-                            $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
+                            $($('.panel-body')[0]).append('<div class="custom-block">' +
+                                '<span>Nicht passendes gefunden?</span>' +
+                                '<button id="create-topic" class="btn btn-default btn btn-icon-text ember-view">  <svg class="fa d-icon d-icon-plus svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg>' +
+                                '<span class="d-button-label">New Topic</span>' +
+                                '</button>' +
+                                '</div>');
                         } else {
                             if (customBlock.length > 0) {
                                 customBlock[0].remove();
