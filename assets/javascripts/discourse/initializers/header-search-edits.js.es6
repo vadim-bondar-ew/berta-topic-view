@@ -22,9 +22,8 @@ export default {
                 afterRender() {
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
-                        let panelBody = $('.panel-body');
-                        console.log(panelBody.length);
-                        if (panelBody.length <= 0 ) {
+                        let customBlock = $('.custom-block');
+                        if (customBlock.length <= 0 ) {
                             $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
                         }
                     }
