@@ -253,3 +253,19 @@ export default {
 
     }
 };
+
+function headerHeight() {
+    const $header = $("header.d-header");
+    const headerOffset = $header.offset();
+    const headerOffsetTop = headerOffset ? headerOffset.top : 0;
+    return parseInt(
+        $header.outerHeight() + headerOffsetTop - $(window).scrollTop()
+    );
+}
+
+function headerTop() {
+    const $header = $("header.d-header");
+    const headerOffset = $header.offset();
+    const headerOffsetTop = headerOffset ? headerOffset.top : 0;
+    return parseInt(headerOffsetTop - $(window).scrollTop());
+}
