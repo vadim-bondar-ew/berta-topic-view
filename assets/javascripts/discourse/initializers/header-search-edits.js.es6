@@ -29,6 +29,10 @@ export default {
                         let noResults = $('.no-results');
                         if (customBlock.length == 0 && results.length > 0 && noResults.length == 0 ) {
                             $($('.panel-body')[0]).append('<div class="custom-block">Test block</div>');
+                        } else {
+                            if (customBlock.length > 0) {
+                                customBlock[0].remove();
+                            }
                         }
                     }
 
