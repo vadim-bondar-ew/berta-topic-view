@@ -9,23 +9,23 @@ export default {
 
         withPluginApi('0.8.9', api => {
 
-            let container = api.container,
-                composerModal = require("discourse/models/composer").default,
-                composerController = container.lookup("controller:composer");
-
-            const createTopic = function() {
-                const controller = container.lookup("controller:navigation/category"),
-                    category = controller.get("category.id"),
-                    topicCategory = container
-                        .lookup("route:topic")
-                        .get("context.category.id"),
-                    categoryd = topicCategory ? topicCategory : category;
-                composerController.open({
-                    action: composerModal.CREATE_TOPIC,
-                    categoryId: categoryd,
-                    draftKey: composerModal.DRAFT
-                });
-            };
+            // let container = api.container,
+            //     composerModal = require("discourse/models/composer").default,
+            //     composerController = container.lookup("controller:composer");
+            //
+            // const createTopic = function() {
+            //     const controller = container.lookup("controller:navigation/category"),
+            //         category = controller.get("category.id"),
+            //         topicCategory = container
+            //             .lookup("route:topic")
+            //             .get("context.category.id"),
+            //         categoryd = topicCategory ? topicCategory : category;
+            //     composerController.open({
+            //         action: composerModal.CREATE_TOPIC,
+            //         categoryId: categoryd,
+            //         draftKey: composerModal.DRAFT
+            //     });
+            // };
 
             const PANEL_BODY_MARGIN = 30;
             api.modifyClass('component:site-header', {
