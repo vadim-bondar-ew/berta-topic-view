@@ -1,6 +1,4 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
-import { wantsNewWindow } from 'discourse/lib/intercept-click';
-import Composer from "discourse/models/composer";
 import { h } from "virtual-dom";
 import { on } from 'ember-addons/ember-computed-decorators';
 
@@ -10,24 +8,9 @@ export default {
 
         withPluginApi('0.8.9', api => {
 
-            let composerController = container.lookup("controller:composer");
-
             const PANEL_BODY_MARGIN = 30;
 
             api.modifyClass('component:site-header', {
-                createTopic: function() {
-                    const controller = container.lookup("controller:navigation/category"),
-                        category = controller.get("category.id"),
-                        topicCategory = container
-                            .lookup("route:topic")
-                            .get("context.category.id"),
-                        categoryd = topicCategory ? topicCategory : category;
-                    composerController.open({
-                        action: composerModal.CREATE_TOPIC,
-                        categoryId: categoryd,
-                        draftKey: composerModal.DRAFT
-                    });
-                },
 
                 @on('didInsertElement')
                 initSizeWatcher() {
