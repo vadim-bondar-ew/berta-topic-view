@@ -13,26 +13,26 @@ export default {
             let composerController = container.lookup("controller:composer");
 
             const PANEL_BODY_MARGIN = 30;
+            const createTopic = function() {
+                const controller = container.lookup("controller:navigation/category"),
+                    category = controller.get("category.id"),
+                    topicCategory = container
+                        .lookup("route:topic")
+                        .get("context.category.id"),
+                    categoryd = topicCategory ? topicCategory : category;
+                composerController.open({
+                    action: composerModal.CREATE_TOPIC,
+                    categoryId: categoryd,
+                    draftKey: composerModal.DRAFT
+                });
+            };
+
             api.modifyClass('component:site-header', {
 
                 @on('didInsertElement')
                 initSizeWatcher() {
                     Ember.run.scheduleOnce('afterRender', () => {
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
-                    });
-                },
-
-                createTopic() {
-                    const controller = container.lookup("controller:navigation/category"),
-                        category = controller.get("category.id"),
-                        topicCategory = container
-                            .lookup("route:topic")
-                            .get("context.category.id"),
-                        categoryd = topicCategory ? topicCategory : category;
-                    composerController.open({
-                        action: composerModal.CREATE_TOPIC,
-                        categoryId: categoryd,
-                        draftKey: composerModal.DRAFT
                     });
                 },
 
@@ -46,7 +46,7 @@ export default {
                         if (customBlock.length == 0 && results.length > 0 && noResults.length == 0 ) {
                             $($('.panel-body')[0]).append('<div class="custom-block">' +
                                 '<span>Nicht passendes gefunden?</span>' +
-                                '<button id="create-topic" onclick="this.createTopic();" class="btn btn-default btn btn-icon-text ember-view">  <svg class="fa d-icon d-icon-plus svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg>' +
+                                '<button id="create-topic" onclick="createTopic();" class="btn btn-default btn btn-icon-text ember-view">  <svg class="fa d-icon d-icon-plus svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg>' +
                                 '<span class="d-button-label">New Topic</span>' +
                                 '</button>' +
                                 '</div>');
