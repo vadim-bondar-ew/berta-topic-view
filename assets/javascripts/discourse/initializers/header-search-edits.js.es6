@@ -10,14 +10,6 @@ export default {
         withPluginApi('0.8.9', api => {
 
             let container = api.container,
-                ntb_text = settings.New_topic_button_text,
-                ntb_title = settings.New_topic_button_title.length
-                    ? settings.New_topic_button_title
-                    : ntb_text,
-                ntb_icon = settings.New_topic_button_icon,
-                ntb_button_class = "btn btn-default btn btn-icon-text",
-                ntb_button_helper = "button#new-create-topic",
-                ntb_label_helper = "span.d-button-label",
                 composerModal = require("discourse/models/composer").default,
                 composerController = container.lookup("controller:composer");
 
