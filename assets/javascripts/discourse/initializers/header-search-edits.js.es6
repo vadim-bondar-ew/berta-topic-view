@@ -13,21 +13,21 @@ export default {
             let composerController = container.lookup("controller:composer");
 
             const PANEL_BODY_MARGIN = 30;
-            const createTopic = function() {
-                const controller = container.lookup("controller:navigation/category"),
-                    category = controller.get("category.id"),
-                    topicCategory = container
-                        .lookup("route:topic")
-                        .get("context.category.id"),
-                    categoryd = topicCategory ? topicCategory : category;
-                composerController.open({
-                    action: composerModal.CREATE_TOPIC,
-                    categoryId: categoryd,
-                    draftKey: composerModal.DRAFT
-                });
-            };
 
             api.modifyClass('component:site-header', {
+                createTopic: function() {
+                    const controller = container.lookup("controller:navigation/category"),
+                        category = controller.get("category.id"),
+                        topicCategory = container
+                            .lookup("route:topic")
+                            .get("context.category.id"),
+                        categoryd = topicCategory ? topicCategory : category;
+                    composerController.open({
+                        action: composerModal.CREATE_TOPIC,
+                        categoryId: categoryd,
+                        draftKey: composerModal.DRAFT
+                    });
+                },
 
                 @on('didInsertElement')
                 initSizeWatcher() {
