@@ -12,20 +12,6 @@ export default {
 
             let composerController = container.lookup("controller:composer");
 
-            const createTopic = function() {
-                const controller = container.lookup("controller:navigation/category"),
-                    category = controller.get("category.id"),
-                    topicCategory = container
-                        .lookup("route:topic")
-                        .get("context.category.id"),
-                    categoryd = topicCategory ? topicCategory : category;
-                composerController.open({
-                    action: composerModal.CREATE_TOPIC,
-                    categoryId: categoryd,
-                    draftKey: composerModal.DRAFT
-                });
-            };
-
             const PANEL_BODY_MARGIN = 30;
             api.modifyClass('component:site-header', {
 
@@ -33,6 +19,20 @@ export default {
                 initSizeWatcher() {
                     Ember.run.scheduleOnce('afterRender', () => {
                         this.$('.menu-panel.drop-down').append('<a href="#" class="close-search-pane">x</a>');
+                    });
+                },
+
+                createTopic() {
+                    const controller = container.lookup("controller:navigation/category"),
+                        category = controller.get("category.id"),
+                        topicCategory = container
+                            .lookup("route:topic")
+                            .get("context.category.id"),
+                        categoryd = topicCategory ? topicCategory : category;
+                    composerController.open({
+                        action: composerModal.CREATE_TOPIC,
+                        categoryId: categoryd,
+                        draftKey: composerModal.DRAFT
                     });
                 },
 
