@@ -20,7 +20,6 @@ export default {
                 },
 
                 afterRender() {
-                    console.log("1111");
 
                     let searchMenu = $('.search-menu');
                     if (searchMenu.length > 0) {
@@ -30,7 +29,7 @@ export default {
                         if (customBlock.length == 0 && results.length > 0 && noResults.length == 0 ) {
                             $($('.panel-body')[0]).append('<div class="custom-block">' +
                                 '<span>Nicht passendes gefunden?</span>' +
-                                '<button id="create-topic" class="btn btn-default btn btn-icon-text ember-view">  <svg class="fa d-icon d-icon-plus svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg>' +
+                                '<button id="create-topic" onclick="createTopic();" class="btn btn-default btn btn-icon-text ember-view">  <svg class="fa d-icon d-icon-plus svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg>' +
                                 '<span class="d-button-label">New Topic</span>' +
                                 '</button>' +
                                 '</div>');
@@ -265,6 +264,32 @@ export default {
         });
 
     }
+};
+
+let container = api.container,
+    ntb_text = settings.New_topic_button_text,
+    ntb_title = settings.New_topic_button_title.length
+        ? settings.New_topic_button_title
+        : ntb_text,
+    ntb_icon = settings.New_topic_button_icon,
+    ntb_button_class = "btn btn-default btn btn-icon-text",
+    ntb_button_helper = "button#new-create-topic",
+    ntb_label_helper = "span.d-button-label",
+    composerModal = require("discourse/models/composer").default,
+    composerController = container.lookup("controller:composer");
+
+const createTopic = function() {
+    const controller = container.lookup("controller:navigation/category"),
+        category = controller.get("category.id"),
+        topicCategory = container
+            .lookup("route:topic")
+            .get("context.category.id"),
+        categoryd = topicCategory ? topicCategory : category;
+    composerController.open({
+        action: composerModal.CREATE_TOPIC,
+        categoryId: categoryd,
+        draftKey: composerModal.DRAFT
+    });
 };
 
 function headerHeight() {
