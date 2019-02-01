@@ -19,6 +19,8 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
+          console.log($("#suggested-topics"));
+          console.log($("#suggested-topic-topics"));
           this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
           this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
         }
