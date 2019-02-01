@@ -39,8 +39,11 @@ export default {
 
         @on('init')
         _setupProperties() {
-          console.log($("#suggested-topics"));
-          this.set('tagName', 'div');
+          if( $("#suggested-topics").length == 0 ) {
+            this.set('tagName', 'div');
+          } else {
+            this.set('tagName', 'tr');
+          }
         },
 
         applyOrdering() {
