@@ -39,6 +39,7 @@ export default {
 
         @on('init')
         _setupProperties() {
+          console.log($("#suggested-topics"));
           this.set('tagName', 'div');
         },
 
