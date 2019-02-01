@@ -1,11 +1,11 @@
-#list-area .mansory {
+.mansory {
   column-count: 2;
   column-gap: 20px;
   column-rule: 1px solid #c4cdd5;
 
 }
 
-#list-area .topic-list-item {
+.topic-list-item {
   border-radius: 4px;
   background: #e9edf2;
   display:inline-block;
@@ -16,19 +16,19 @@
   margin-bottom: 10px;
 }
 
-#list-area .arrow {
+.arrow {
   width: 0px;
   position: absolute;
   top: 50%;
   margin-top: -15px;
 }
 
-#list-area .topic-list-item.right-column {
+.topic-list-item.right-column {
   margin-left: 30px;
   width: calc(100% - 30px);
 }
 
-#list-area .right-column .arrow {
+.right-column .arrow {
   left: -30px;
   border-top: 15px solid transparent;
   border-left: 15px solid transparent;
@@ -36,11 +36,11 @@
   border-right: 15px solid #e9edf2;
 }
 
-#list-area .topic-list-item.left-column {
+.topic-list-item.left-column {
   width: calc(100% - 30px);
 }
 
-#list-area .left-column .arrow {
+.left-column .arrow {
   right: -30px;
   border-top: 15px solid transparent;
   border-right: 15px solid transparent;
@@ -48,48 +48,48 @@
   border-left: 15px solid #e9edf2;
 }
 
-#list-area table.topic-list thead {
+table.topic-list thead {
   display: none;
 }
 
-#list-area table.topic-list tbody {
+table.topic-list tbody {
   border: none;
 }
 
-#list-area table.topic-list .link-top-line {
+table.topic-list .link-top-line {
   display: block;
 }
 
-#list-area table.topic-list .link-top-line a.raw-topic-link {
+table.topic-list .link-top-line a.raw-topic-link {
   font-size: 18px;
   color: #92d6b4 !important;
 }
 
-#list-area table.topic-list .category-name {
+table.topic-list .category-name {
   color: #919eab;
   font-size: 12px;
 }
 
-#list-area table.topic-list .topic-excerpt {
+table.topic-list .topic-excerpt {
   color: #637381;
   font-size: 14px;
 }
 
-#list-area .topic-list-item .relative-date {
+.topic-list-item .relative-date {
   display: none;
 }
 
-#list-area .topic-statuses {
+.topic-statuses {
   float: none;
 }
 
-#list-area .topic-info-row .number {
+.topic-info-row .number {
   font-size: 14px;
   color: #454f5b;
   margin-left: 4px;
 }
 
-#list-area .topic-info-row {
+.topic-info-row {
   display: flex;
   align-items: center;
   width: 80%;
@@ -98,23 +98,23 @@
   font-size: 14px;
 }
 
-#list-area a[data-user-card] {
+a[data-user-card] {
   margin-right: 5px;
 }
 
-#list-area .posters-title {
+.posters-title {
   margin-right: 10px;
 }
 
-#list-area .post-count-title {
+.post-count-title {
   margin-left: 30px;
 }
 
-#list-area .post-view-count-title {
+.post-view-count-title {
   margin-left: 20px;
 }
 
-#list-area .right-column:first-child, :not(.right-column) + .right-column {
+.right-column:first-child, :not(.right-column) + .right-column {
   margin-top: 45px;
 }
 
