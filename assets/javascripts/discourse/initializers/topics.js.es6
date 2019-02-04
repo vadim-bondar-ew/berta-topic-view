@@ -19,7 +19,7 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
-          if( $("#suggested-topics").length > 0 || $(".user-messages-page").length == 0 ) {
+          if( $("#suggested-topics").length > 0 || $(".user-messages-page").length > 0 ) {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
           }
@@ -39,7 +39,7 @@ export default {
 
         @on('init')
         _setupProperties() {
-          if( $("#suggested-topics").length == 0 || $(".user-messages-page").length == 0 ) {
+          if( $("#suggested-topics").length > 0 || $(".user-messages-page").length > 0 ) {
             this.set('tagName', 'div');
           } else {
             this.set('tagName', 'tr');
