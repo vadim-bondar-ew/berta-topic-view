@@ -9,3 +9,32 @@
     font-size: 28px !important;
     margin-bottom: 20px !important;
 }
+
+#list-area .mansory {
+    column-count: auto!important;
+    column-gap: normal!important;
+    column-rule: none!important;
+}
+
+.topic-list .topic-excerpt {
+    width: auto!important;
+}
+
+#list-area .mansory {
+    column-count: auto!important;
+    column-gap: normal!important;
+    column-rule: none!important;
+}
+
+#list-area .right-column .arrow,
+#list-area .left-column .arrow {
+    display: none!important;
+
+}
+
+#list-area .topic-list-item.right-column,
+#list-area .topic-list-item.left-column {
+    width: calc(100% - 7px)!important;
+    margin-left: 0!important;
+    margin-top: 0!important;
+}
