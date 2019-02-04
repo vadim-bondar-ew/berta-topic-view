@@ -117,7 +117,9 @@
 #list-area .right-column:first-child, :not(.right-column) + .right-column {
   margin-top: 45px;
 }
-
+.user-messages-page .post-count-title,
+.user-messages-page .post-view-count-title,
+.user-messages-page .topic-info-row,
 #suggested-topics .post-count-title,
 #suggested-topics .post-view-count-title,
 #suggested-topics .topic-info-row {
