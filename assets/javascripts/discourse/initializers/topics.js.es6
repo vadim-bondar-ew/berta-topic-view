@@ -1,5 +1,6 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { on, observes } from 'ember-addons/ember-computed-decorators';
+import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
 
 export default {
   name: 'topics',
@@ -53,6 +54,12 @@ export default {
           } else {
             this.$().addClass("left-column");
           }
+
+          favorites.isFavorite(category.id, isFavorite => {
+            if (isFavorite) {
+              this.$().css('background-color', 'red');
+            }
+          });
         }
 
       });
