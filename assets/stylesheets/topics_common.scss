@@ -126,3 +126,11 @@
 #suggested-topics .topic-info-row {
   display:none;
 }
+
+#list-area .topic-list-item.green {
+  background: #92d6b4;
+}
+
+#list-area .topic-list-item.green .arrow {
+  border-left: 15px solid #92d6b4!important;
+}

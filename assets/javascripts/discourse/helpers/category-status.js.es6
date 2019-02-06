@@ -15,11 +15,11 @@ export function categoryLinkHTML(category, options) {
         options = options.hash;
     }
 
-    // favorites.isFavorite(category.id, isFavorite => {
-    //     if (isFavorite) {
-    //         this.$().css('background-color', 'red');
-    //     }
-    // });
+    favorites.isFavorite(category.id, isFavorite => {
+        if (isFavorite) {
+            this.$().addClass('green');
+        }
+    });
 
     if (options) {
         if (options.allowUncategorized) {
