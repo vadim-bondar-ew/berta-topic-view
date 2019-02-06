@@ -143,6 +143,15 @@
   -webkit-filter: brightness(200%);
   filter: brightness(200%);
 }
+
+#list-area .topic-list-item.green .favorite-icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+#list-area .topic-list-item.green .d-icon-thumbtack,
+#list-area .topic-list-item.green .d-icon-thumbtack.unpinned,
 #list-area .topic-list-item.green .category-name,
 #list-area .topic-list-item.green .topic-info-row .number,
 #list-area .topic-list-item.green .topic-info-row,
