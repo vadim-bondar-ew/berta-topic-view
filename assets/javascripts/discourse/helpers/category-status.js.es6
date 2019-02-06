@@ -19,6 +19,8 @@ export function categoryLinkHTML(category, options) {
         options = options.hash;
     }
 
+    console.log(this.$());
+
     if (options) {
         if (options.allowUncategorized) {
             categoryOptions.allowUncategorized = true;

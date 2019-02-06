@@ -54,12 +54,6 @@ export default {
           } else {
             this.$().addClass("left-column");
           }
-
-          favorites.isFavorite(category.id, isFavorite => {
-            if (isFavorite) {
-              this.$().css('background-color', 'red');
-            }
-          });
         }
 
       });
