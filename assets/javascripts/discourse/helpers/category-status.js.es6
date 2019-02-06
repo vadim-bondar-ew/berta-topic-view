@@ -1,7 +1,6 @@
 import { registerUnbound } from 'discourse-common/lib/helpers';
 import * as categoryLink from "discourse/helpers/category-link";
 import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
-import Category from 'discourse/models/category';
 
 var get = Em.get,
     escapeExpression = Handlebars.Utils.escapeExpression;
@@ -9,7 +8,9 @@ var get = Em.get,
 
 export function categoryLinkHTML(category, options) {
     var categoryOptions = {};
-    console.log(category.id);
+
+    console.log(favorites._getFavorites());
+
     // TODO: This is a compatibility layer with the old helper structure.
     // Can be removed once we migrate to `registerUnbound` fully
     if (options && options.hash) {
