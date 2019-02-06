@@ -15,11 +15,13 @@ export function categoryLinkHTML(category, options) {
         options = options.hash;
     }
 
-    favorites.isFavorite(category.id, isFavorite => {
-        if (isFavorite) {
-            this.$().addClass('green');
-            this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
-        }
+    Ember.run.scheduleOnce('afterRender', this, () => {
+        favorites.isFavorite(category.id, isFavorite => {
+            if (isFavorite) {
+                this.$().addClass('green');
+                this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
+            }
+        });
     });
 
     if (options) {
