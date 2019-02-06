@@ -18,6 +18,7 @@ export function categoryLinkHTML(category, options) {
     favorites.isFavorite(category.id, isFavorite => {
         if (isFavorite) {
             this.$().addClass('green');
+            this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
         }
     });
 
