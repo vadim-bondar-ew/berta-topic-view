@@ -9,17 +9,15 @@ var get = Em.get,
 export function categoryLinkHTML(category, options) {
     var categoryOptions = {};
 
-    favorites.isFavorite(category.id, isFavorite => {
-
-    });
-
     // TODO: This is a compatibility layer with the old helper structure.
     // Can be removed once we migrate to `registerUnbound` fully
     if (options && options.hash) {
         options = options.hash;
     }
 
-    console.log(this.$());
+    favorites.isFavorite(category.id, isFavorite => {
+        this.$().css('background-color', 'red');
+    });
 
     if (options) {
         if (options.allowUncategorized) {
