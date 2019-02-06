@@ -9,7 +9,7 @@ var get = Em.get,
 export function categoryLinkHTML(category, options) {
     var categoryOptions = {};
 
-    console.log(favorites);
+    favorites.isFavorite(args.category.id, isFavorite => { console.log(isFavorite) });
 
     // TODO: This is a compatibility layer with the old helper structure.
     // Can be removed once we migrate to `registerUnbound` fully
