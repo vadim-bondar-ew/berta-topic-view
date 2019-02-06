@@ -1,22 +1,9 @@
 import { registerUnbound } from 'discourse-common/lib/helpers';
+import * as categoryLink from "discourse/helpers/category-link";
 
 var get = Em.get,
     escapeExpression = Handlebars.Utils.escapeExpression;
 
-export function categoryBadgeHTML(category, opts) {
-    opts = opts || {};
-
-    if (
-        !category ||
-        (!opts.allowUncategorized &&
-            Ember.get(category, "id") ===
-            Discourse.Site.currentProp("uncategorized_category_id") &&
-            Discourse.SiteSettings.suppress_uncategorized_badge)
-    )
-        return "";
-
-    return _renderer(category, opts);
-}
 
 export function categoryLinkHTML(category, options) {
     var categoryOptions = {};
@@ -45,7 +32,7 @@ export function categoryLinkHTML(category, options) {
         }
     }
     return new Handlebars.SafeString(
-        categoryBadgeHTML(category, categoryOptions)
+        categoryLink.categoryBadgeHTML(category, categoryOptions)
     );
 }
 
