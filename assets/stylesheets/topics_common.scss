@@ -139,7 +139,7 @@
   border-left: 15px solid #92d6b4!important;
 }
 
-#list-area .topic-list-item.green img.single {
+#list-area .topic-list-item.green a[data-user-card="system"] img {
   -webkit-filter: brightness(200%);
   filter: brightness(200%);
 }
