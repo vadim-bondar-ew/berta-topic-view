@@ -15,7 +15,7 @@
   <div class="link-bottom-line">
     {{#unless hideCategory}}
       {{#unless topic.isPinnedUncategorized}}
-        {{category-link topic.category}}
+        {{category-link topic.category}} {{category}}
       {{/unless}}
     {{/unless}}
     {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
