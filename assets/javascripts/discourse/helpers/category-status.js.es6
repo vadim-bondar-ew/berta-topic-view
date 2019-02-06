@@ -7,7 +7,7 @@ var get = Em.get,
 
 export function categoryLinkHTML(category, options) {
     var categoryOptions = {};
-    console.log(options);
+    console.log(category);
     // TODO: This is a compatibility layer with the old helper structure.
     // Can be removed once we migrate to `registerUnbound` fully
     if (options && options.hash) {
