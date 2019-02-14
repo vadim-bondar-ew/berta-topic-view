@@ -43,6 +43,8 @@ export default {
             this.set('tagName', 'div');
           } else {
             this.set('tagName', 'tr');
+
+            console.log(this.$(".favorite-icon"));
           }
         },
 
