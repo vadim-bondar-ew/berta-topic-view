@@ -44,7 +44,7 @@ export default {
           } else {
             this.set('tagName', 'tr');
           }
-          console.log(this.$(".favorite-icon"));
+          console.log($(".favorite-icon"));
         },
 
         applyOrdering() {
