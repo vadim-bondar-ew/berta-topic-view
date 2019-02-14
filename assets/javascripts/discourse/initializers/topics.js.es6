@@ -44,10 +44,10 @@ export default {
           } else {
             this.set('tagName', 'tr');
           }
-          console.log($(".favorite-icon"));
         },
 
         applyOrdering() {
+          console.log(this.$(".favorite-icon"));
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
