@@ -47,8 +47,8 @@ export default {
         },
 
         applyOrdering() {
-          console.log(this.$(".favorite-icon")[0]);
-          console.log($(this.$(".favorite-icon")[0]));
+          console.log(this.$().find(".favorite-icon"));
+          // console.log($(this.$(".favorite-icon")[0]));
           this.$(".favorite-icon")[0].click(() => {
             console.log(this.get('topic'));
           });
