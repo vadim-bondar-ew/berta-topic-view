@@ -159,6 +159,22 @@
   color: #FFF!important;
 }
 
-tr[data-category-id="1"] {
+tr[data-category-id="3"] {
   background: #92d6b4;
+}
+
+tr[data-category-id="3"] h1 {
+  color: #fff;
+}
+
+tr[data-category-id="3"] td {
+  color: #fff;
+}
+
+tr[data-category-id="3"] a {
+  color: #fff;
+}
+
+tr[data-category-id="3"] span {
+  color: #fff;
 }
