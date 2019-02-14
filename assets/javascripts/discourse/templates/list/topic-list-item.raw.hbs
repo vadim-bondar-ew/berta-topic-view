@@ -29,7 +29,7 @@
             {{~topic-featured-link topic}}
         {{~/if}}
         {{~raw-plugin-outlet name="topic-list-after-title"}}
-        {{star-highlight}}
+        <i class="fa fa-star favorite-icon" aria-hidden="true"></i>
             {{!--topic.created_at--}}
         {{~#if showTopicPostBadges}}
             {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
