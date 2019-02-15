@@ -33,10 +33,6 @@ export default {
                                 '<span class="d-button-label">New Topic</span>' +
                                 '</button>' +
                                 '</div>');
-                        } else {
-                            if (customBlock.length > 0) {
-                                customBlock[0].remove();
-                            }
                         }
                     }
 
