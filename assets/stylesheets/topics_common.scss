@@ -198,3 +198,28 @@ tr[data-category-id="3"] span {
 #reply-control.draft, #reply-control.saving {
   background: #92d6b4 !important;
 }
+
+blockquote {
+  border-left: 5px solid #179494;
+  background-color: #a1d6c5;
+  clear: both;
+  color: #FFF;
+}
+
+div.poll li {
+  font-size: 14px!important;
+}
+
+div.poll .poll-container {
+  padding: 0!important;
+}
+
+.poll-voters-list {
+  width:20%!important;
+}
+
+
+.poll-container li span:first-of-type {
+  color: #454F5B;
+  min-width: 40%;
+}
