@@ -179,6 +179,10 @@ tr[data-category-id="3"] span {
   color: #fff;
 }
 
+tbody[aria-labelledby="categories-only-category"] {
+  border-top: none;
+}
+
 .category-description {
   padding-top: 5px;
 }
