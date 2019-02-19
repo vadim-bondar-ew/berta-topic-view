@@ -34,9 +34,10 @@
             {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
         {{~/if}}
     </span>
-
+    1111
+  {{#if expandPinned}}
     {{raw "list/topic-excerpt" topic=topic}}
-  
+  {{/if}}
 </td>
 <div class="topic-info-row">
     {{#if showPosters}}
