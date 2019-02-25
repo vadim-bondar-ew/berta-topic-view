@@ -1,6 +1,6 @@
 import { registerUnbound } from 'discourse-common/lib/helpers';
 import * as categoryLink from "discourse/helpers/category-link";
-// import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
+import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
 
 var get = Em.get,
     escapeExpression = Handlebars.Utils.escapeExpression;
