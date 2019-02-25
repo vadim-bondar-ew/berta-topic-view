@@ -16,14 +16,12 @@ export function categoryLinkHTML(category, options) {
     }
 
     Ember.run.scheduleOnce('afterRender', this, () => {
-        console.log("111");
-        console.log(category);
-        // favorites.isFavorite(category.id, isFavorite => {
-        //     if (isFavorite) {
-        //         this.$().addClass('green');
-        //         this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
-        //     }
-        // });
+        favorites.isFavorite(category.id, isFavorite => {
+            if (isFavorite) {
+                this.$().addClass('green');
+                // this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
+            }
+        });
     });
 
     if (options) {
