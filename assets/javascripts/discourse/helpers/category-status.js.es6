@@ -18,6 +18,7 @@ export function categoryLinkHTML(category, options) {
     Ember.run.scheduleOnce('afterRender', this, () => {
         favorites.isFavorite(category.id, isFavorite => {
             if (isFavorite) {
+                console.log("111");
                 this.$().addClass('green');
                 // this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
             }
