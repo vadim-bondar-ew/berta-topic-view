@@ -232,4 +232,14 @@ div.poll .poll-container {
   float: left;
 }
 
-tr < i.fa-star { background: #000; }
+#list-area .topic-list-item.pinned {
+  background: #000;
+}
+
+#list-area .topic-list-item.left-column.pinned .arrow {
+  border-left: 15px solid #000;
+}
+
+#list-area .topic-list-item.right-column.pinned .arrow {
+  border-right: 15px solid #000;
+}
