@@ -16,6 +16,7 @@ export function categoryLinkHTML(category, options) {
     }
 
     Ember.run.scheduleOnce('afterRender', this, () => {
+        console.log("111");
         console.log(category);
         // favorites.isFavorite(category.id, isFavorite => {
         //     if (isFavorite) {

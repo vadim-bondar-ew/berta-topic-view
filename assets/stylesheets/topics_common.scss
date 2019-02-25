@@ -127,37 +127,37 @@
   display:none;
 }
 
-#list-area .topic-list-item.green {
-  background: #92d6b4;
-}
-
-#list-area .topic-list-item.right-column.green .arrow {
-  border-right: 15px solid #92d6b4!important;
-}
-
-#list-area .topic-list-item.left-column.green .arrow {
-  border-left: 15px solid #92d6b4!important;
-}
-
-#list-area .topic-list-item.green a[data-user-card="system"] img {
-  -webkit-filter: brightness(200%);
-  filter: brightness(200%);
-}
-
-#list-area .topic-list-item.green .favorite-icon {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-}
-
-#list-area .topic-list-item.green .d-icon-thumbtack,
-#list-area .topic-list-item.green .d-icon-thumbtack.unpinned,
-#list-area .topic-list-item.green .category-name,
-#list-area .topic-list-item.green .topic-info-row .number,
-#list-area .topic-list-item.green .topic-info-row,
-#list-area .topic-list-item.green .link-top-line a.raw-topic-link {
-  color: #FFF!important;
-}
+//#list-area .topic-list-item.green {
+//  background: #92d6b4;
+//}
+//
+//#list-area .topic-list-item.right-column.green .arrow {
+//  border-right: 15px solid #92d6b4!important;
+//}
+//
+//#list-area .topic-list-item.left-column.green .arrow {
+//  border-left: 15px solid #92d6b4!important;
+//}
+//
+//#list-area .topic-list-item.green a[data-user-card="system"] img {
+//  -webkit-filter: brightness(200%);
+//  filter: brightness(200%);
+//}
+//
+//#list-area .topic-list-item.green .favorite-icon {
+//  position: absolute;
+//  top: 7px;
+//  right: 7px;
+//}
+//
+//#list-area .topic-list-item.green .d-icon-thumbtack,
+//#list-area .topic-list-item.green .d-icon-thumbtack.unpinned,
+//#list-area .topic-list-item.green .category-name,
+//#list-area .topic-list-item.green .topic-info-row .number,
+//#list-area .topic-list-item.green .topic-info-row,
+//#list-area .topic-list-item.green .link-top-line a.raw-topic-link {
+//  color: #FFF!important;
+//}
 
 tr[data-category-id="3"] {
   background: #92d6b4;
@@ -232,7 +232,7 @@ div.poll .poll-container {
   float: left;
 }
 
-#list-area .topic-list-item.green {
+#list-area .topic-list-item.pinned {
   background: #92d6b4;
 }
 
