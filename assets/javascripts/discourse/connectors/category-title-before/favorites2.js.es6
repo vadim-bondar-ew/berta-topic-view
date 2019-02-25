@@ -1,7 +1,8 @@
 import { ajax } from 'discourse/lib/ajax';
+import Title from 'discourse/plugins/discourse-favorites/discourse/connectors/category-title-before/favorites';
 import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
 
-export default {
+export default Title.extend( {
 
     setupComponent(args, component) {
         console.log("1111");
@@ -25,4 +26,4 @@ export default {
         }
     }
 
-};
+});
