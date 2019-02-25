@@ -232,14 +232,34 @@ div.poll .poll-container {
   float: left;
 }
 
-#list-area .topic-list-item.pinned {
+#list-area .topic-list-item.green {
   background: #92d6b4;
 }
 
-#list-area .topic-list-item.left-column.pinned .arrow {
-  border-left: 15px solid #92d6b4;
+#list-area .topic-list-item.right-column.pinned .arrow {
+  border-right: 15px solid #92d6b4!important;
 }
 
-#list-area .topic-list-item.right-column.pinned .arrow {
-  border-right: 15px solid #92d6b4;
+#list-area .topic-list-item.left-column.pinned .arrow {
+  border-left: 15px solid #92d6b4!important;
+}
+
+#list-area .topic-list-item.pinned a[data-user-card="system"] img {
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
+}
+
+#list-area .topic-list-item.pinned .favorite-icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+#list-area .topic-list-item.pinned .d-icon-thumbtack,
+#list-area .topic-list-item.pinned .d-icon-thumbtack.unpinned,
+#list-area .topic-list-item.pinned .category-name,
+#list-area .topic-list-item.pinned .topic-info-row .number,
+#list-area .topic-list-item.pinned .topic-info-row,
+#list-area .topic-list-item.pinned .link-top-line a.raw-topic-link {
+  color: #FFF!important;
 }
