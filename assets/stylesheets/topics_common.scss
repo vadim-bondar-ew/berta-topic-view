@@ -263,3 +263,7 @@ div.poll .poll-container {
 #list-area .topic-list-item.pinned .link-top-line a.raw-topic-link {
   color: #FFF!important;
 }
+
+#search-term input::first-letter {
+  text-transform: capitalize;
+}
