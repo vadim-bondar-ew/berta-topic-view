@@ -268,3 +268,7 @@ div.poll .poll-container {
 .results .user-titles span {
   color: #FFF!important;
 }
+
+button[aria-label="Alle herunterladen"] {
+  display: none;
+}
