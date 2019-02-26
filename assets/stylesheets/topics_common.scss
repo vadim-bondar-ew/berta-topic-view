@@ -264,6 +264,7 @@ div.poll .poll-container {
   color: #FFF!important;
 }
 
-#search-term input::first-letter {
-  text-transform: capitalize;
+.results .blurb span,
+.results .user-titles span {
+  color: #FFF!important;
 }
