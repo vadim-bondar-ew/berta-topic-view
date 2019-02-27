@@ -302,5 +302,9 @@ button[aria-label="Alle herunterladen"] {
 }
 
 li[data-name="quarterly"] {
-  display: none;
+  display: none !important;
+}
+
+li[data-name="yearly"] .date-section {
+  display: none !important;
 }
