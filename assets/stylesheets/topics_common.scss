@@ -308,3 +308,7 @@ li[data-name="quarterly"] {
 li[data-name="yearly"] .date-section {
   display: none !important;
 }
+
+li[title="yearly"] .date-section {
+  display: none !important;
+}
