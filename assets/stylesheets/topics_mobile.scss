@@ -29,7 +29,7 @@
 
     #list-area .topic-list-item.right-column,
     #list-area .topic-list-item.left-column {
-        width: calc(100% - 7px)!important;
+        width: 100%!important;
         margin-left: 0!important;
         margin-top: 0!important;
     }
@@ -74,5 +74,9 @@
     div.poll .poll-container,
     div.poll .poll-info {
         padding: 0!important;
+    }
+
+    #list-area .topic-info-row {
+        display: block !important;
     }
 }

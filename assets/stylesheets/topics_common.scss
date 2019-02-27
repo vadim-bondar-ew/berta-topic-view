@@ -284,3 +284,7 @@ button[aria-label="Alle herunterladen"] {
 .emoji-picker .footer {
   display: none;
 }
+
+.menu-panel li a:hover, .menu-panel li a:focus, .menu-panel li.heading a:hover, .menu-panel li.heading a:focus {
+  background-color: #92d6b4;
+}
