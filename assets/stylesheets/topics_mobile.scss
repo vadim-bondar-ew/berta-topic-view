@@ -77,6 +77,11 @@
     }
 
     #list-area .topic-info-row {
-        display: block !important;
+        display: inline !important;
+    }
+
+    #list-area .post-view-count-title,
+    #list-area .post-count-title {
+        margin-left: 0!important;
     }
 }
