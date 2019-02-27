@@ -296,3 +296,11 @@ button[aria-label="Alle herunterladen"] {
 .composer-fields .topic-count {
   display: none;
 }
+
+.select-kit .select-kit-row.is-selected {
+  background: #92d6b4;
+}
+
+li[data-name="quarterly"] {
+  display: none;
+}
