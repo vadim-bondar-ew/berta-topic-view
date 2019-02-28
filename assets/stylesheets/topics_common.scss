@@ -320,3 +320,28 @@ button[title="yearly"] .date-section {
 .navigation-topics .category-breadcrumb {
   display: none !important;
 }
+
+.select-kit-body .select-kit-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-kit-body .select-kit-collection li[data-name="daily"] {
+  order: 2;
+}
+
+.select-kit-body .select-kit-collection li[data-name="weekly"] {
+  order: 3;
+}
+
+.select-kit-body .select-kit-collection li[data-name="monthly"] {
+  order: 4;
+}
+
+.select-kit-body .select-kit-collection li[data-name="yearly"] {
+  order: 5;
+}
+
+.select-kit-body .select-kit-collection li[data-name="all"] {
+  order: 1;
+}
