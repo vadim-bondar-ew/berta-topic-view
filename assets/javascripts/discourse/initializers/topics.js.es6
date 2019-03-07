@@ -27,6 +27,15 @@ export default {
 
       });
 
+      api.modifyClass('component:categories-only',  {
+        // Lifecyle logic
+
+        @on('didInsertElement')
+        setupListStyle() {
+          console.log(this.currentUser);
+        }
+
+      });
 
       api.modifyClass('component:topic-list-item', {
 
