@@ -33,7 +33,9 @@ export default {
         @on('didInsertElement')
         setupListStyle() {
           console.log(this.currentUser);
-          console.log(this.$('.fa .fa-star'));
+          Ember.run.scheduleOnce('afterRender', this, () => {
+            console.log(this.$('.fa .fa-star'));
+          });
         }
 
       });
