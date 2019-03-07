@@ -30,10 +30,25 @@ export default {
       api.modifyClass('component:category-title-link',  {
         // Lifecyle logic
 
+        @on('init')
+        setup() {
+          Ember.run.scheduleOnce('afterRender', this, () => {
+            console.log("Parent");
+            console.log(this.$().parent());
+
+            console.log("Star");
+            console.log(this.$().parent().find('.fa-star'));
+          });
+        },
+
         @on('didInsertElement')
         setupListStyle() {
           console.log(this.currentUser);
           Ember.run.scheduleOnce('afterRender', this, () => {
+            console.log("Parent");
+            console.log(this.$().parent());
+
+            console.log("Star");
             console.log(this.$().parent().find('.fa-star'));
           });
         }
