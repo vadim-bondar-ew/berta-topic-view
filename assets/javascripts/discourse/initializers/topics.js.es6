@@ -27,25 +27,6 @@ export default {
 
       });
 
-      api.modifyClass('component:category-title-link',  {
-        // Lifecyle logic
-
-        @on('didInsertElement')
-        setupListStyle() {
-          console.log(this.currentUser);
-          Ember.run.scheduleOnce('afterRender', this, () => {
-            console.log("Parent");
-            console.log(this.$().parent());
-
-            console.log("Star");
-            console.log(this.$().parent().closest("i"));
-
-            console.log($(".fa-star"));
-          });
-        }
-
-      });
-
       api.modifyClass('component:topic-list-item', {
 
         // Lifecyle logic
