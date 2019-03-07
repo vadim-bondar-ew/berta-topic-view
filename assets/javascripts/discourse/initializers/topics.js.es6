@@ -27,7 +27,7 @@ export default {
 
       });
 
-      api.modifyClass('component:categories-only',  {
+      api.modifyClass('component:category-title-link',  {
         // Lifecyle logic
 
         @on('didInsertElement')
