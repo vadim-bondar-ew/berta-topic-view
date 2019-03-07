@@ -39,6 +39,8 @@ export default {
 
             console.log("Star");
             console.log(this.$().parent().closest("i"));
+
+            console.log($('.fa-star');
           });
         }
 
