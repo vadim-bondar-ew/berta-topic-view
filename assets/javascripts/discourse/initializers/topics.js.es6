@@ -33,7 +33,7 @@ export default {
         @on('didInsertElement')
         setupListStyle() {
           console.log(this.currentUser);
-          console.log($('.fa .fa-star'));
+          console.log(this.$('.fa .fa-star'));
         }
 
       });
