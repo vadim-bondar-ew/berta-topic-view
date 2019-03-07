@@ -34,7 +34,7 @@ export default {
         setupListStyle() {
           console.log(this.currentUser);
           Ember.run.scheduleOnce('afterRender', this, () => {
-            console.log(this.$());
+            console.log(this.$().parent());
           });
         }
 
