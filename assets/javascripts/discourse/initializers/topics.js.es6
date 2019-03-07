@@ -34,8 +34,11 @@ export default {
         setupListStyle() {
           console.log(this.currentUser);
           Ember.run.scheduleOnce('afterRender', this, () => {
+            console.log("Parent");
+            console.log(this.$().parent());
+
             console.log("Star");
-            console.log(this.$().parent()[0].find('.fa-star'));
+            console.log(this.$().parent().closest("i"));
           });
         }
 
