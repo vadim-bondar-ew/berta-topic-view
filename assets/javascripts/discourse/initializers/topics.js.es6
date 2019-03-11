@@ -33,7 +33,7 @@ export default {
               }
               _col++;
             }
-            // _wrapper.html(_out);
+            _wrapper.html(_out);
 
           });
         },
