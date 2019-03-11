@@ -21,10 +21,6 @@ export default {
                 _out = [],
                 _col = 0;
 
-            console.log("TEST");
-            console.log(_wrapper);
-            console.log(_cards);
-
             while(_col < _cols) {
               for (let i = 0; i < _cards.length; i += _cols) {
                 let _val = _cards[i + _col];
