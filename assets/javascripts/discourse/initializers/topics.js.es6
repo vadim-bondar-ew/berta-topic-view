@@ -33,6 +33,9 @@ export default {
               }
               _col++;
             }
+            if (_cards.length & 1) {
+              _out.push(_cards[_cards.length - 1]);
+            }
             _wrapper.html(_out);
 
           });
