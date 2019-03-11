@@ -15,7 +15,7 @@ export default {
           Ember.run.scheduleOnce('afterRender', this, () => {
             this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
 
-            let _wrapper = this.$("mansory"),
+            let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
                 _out = [],
