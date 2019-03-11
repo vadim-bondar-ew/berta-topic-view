@@ -13,7 +13,7 @@ export default {
         @on('init')
         setup() {
           Ember.run.scheduleOnce('afterRender', this, () => {
-            this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
+            // this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
 
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
