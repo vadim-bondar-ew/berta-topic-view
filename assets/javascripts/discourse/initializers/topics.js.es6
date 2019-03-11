@@ -15,11 +15,15 @@ export default {
           Ember.run.scheduleOnce('afterRender', this, () => {
             this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
 
-            let _wrapper = this.$("div.mansory"),
+            let _wrapper = this.$("mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
                 _out = [],
                 _col = 0;
+
+            console.log("TEST");
+            console.log(_wrapper);
+            console.log(_cards);
 
             while(_col < _cols) {
               for (let i = 0; i < _cards.length; i += _cols) {
