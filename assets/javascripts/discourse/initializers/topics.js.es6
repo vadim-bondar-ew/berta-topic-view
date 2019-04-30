@@ -39,6 +39,11 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
+          this.$('href="/top"').click(function(e) {
+            e.preventDefault();
+            window.location.href = window.location.href+'/all';
+          });
+
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
