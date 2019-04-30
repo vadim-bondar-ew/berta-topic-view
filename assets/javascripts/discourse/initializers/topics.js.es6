@@ -39,15 +39,6 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
-          this.$('a[href="/top"]').click(function(e) {
-            e.preventDefault();
-            window.location.href = 'https://doc-doc.ch/top/all';
-          });
-
-          if (window.location.host == 'doc-doc.ch' || window.location.pathname == '/top') {
-            window.location.href = 'https://doc-doc.ch/top/all';
-          }
-
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
