@@ -5,7 +5,6 @@ import favorites from 'discourse/plugins/discourse-favorites/lib/favorites';
 export default {
 
     setupComponent(args, component) {
-        console.log("1111");
         component.set('category', args.category);
         favorites.isFavorite(args.category.id, isFavorite => {
             component.set('isFavorite', isFavorite);
