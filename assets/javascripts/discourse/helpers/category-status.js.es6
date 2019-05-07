@@ -19,7 +19,9 @@ export function categoryLinkHTML(category, options) {
         favorites.isFavorite(category.id, isFavorite => {
             if (isFavorite) {
                 this.$().addClass('green');
-                $().find('td').each(function(column, td) {
+                console.log(this.$().find('td'));
+                this.$().find('td').each(function(column, td) {
+                    console.log($(td));
                     $(td).addClass('green');
                 });
                 // this.$().append('<i class="fa fa-star favorite-icon" aria-hidden="true"></i>');
