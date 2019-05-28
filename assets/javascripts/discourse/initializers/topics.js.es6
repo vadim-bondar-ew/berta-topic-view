@@ -53,7 +53,7 @@ export default {
 
         @on('init')
         setup() {
-          Ember.run.scheduleOnce('afterRender', this, this.applyOrdering);
+          Ember.run.schedule('afterRender', this, this.applyOrdering);
         },
 
         @on('init')
