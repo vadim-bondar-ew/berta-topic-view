@@ -69,16 +69,16 @@ export default {
 
             var screenWidth = this.$(window).innerWidth() / 2;
             this.$(".topic-list-item").each(function( index ) {
-              this.$().removeClass("right-column");
-              this.$().removeClass("left-column");
+              $(this).removeClass("right-column");
+              $(this).removeClass("left-column");
 
-              if (this.$().offset().left > screenWidth) {
-                this.$().addClass("right-column");
+              if ($(this).offset().left > screenWidth) {
+                $(this).addClass("right-column");
               } else {
-                this.$().addClass("left-column");
+                $(this).addClass("left-column");
               }
 
-              this.$().append(this.$("<div class='arrow'></div>"));
+              $(this).append($("<div class='arrow'></div>"));
             });
           });
         },
