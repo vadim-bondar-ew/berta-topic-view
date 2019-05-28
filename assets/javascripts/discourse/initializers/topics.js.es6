@@ -95,6 +95,7 @@ export default {
         },
 
         applyOrdering() {
+          console.log("Render item");
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
