@@ -46,29 +46,28 @@ export default {
 
         @observes('topics.[]')
         masonryObserver() {
-          if (this.get('tilesStyle')){
-            Ember.run.scheduleOnce('afterRender', this, () => {
-              console.log('updated collection');
-              let _wrapper = this.$(".mansory"),
-                  _cards = this.$(".topic-list-item"),
-                  _cols = 2,
-                  _out = [],
-                  _col = 0;
+          console.log("111");
+          Ember.run.scheduleOnce('afterRender', this, () => {
+            console.log('updated collection');
+            let _wrapper = this.$(".mansory"),
+                _cards = this.$(".topic-list-item"),
+                _cols = 2,
+                _out = [],
+                _col = 0;
 
-              while(_col < _cols) {
-                for (let i = 0; i < _cards.length; i += _cols) {
-                  let _val = _cards[i + _col];
-                  if (_val !== undefined)
-                    _out.push(_val);
-                }
-                _col++;
+            while(_col < _cols) {
+              for (let i = 0; i < _cards.length; i += _cols) {
+                let _val = _cards[i + _col];
+                if (_val !== undefined)
+                  _out.push(_val);
               }
-              if (_cards.length & 1) {
-                _out.push(_cards[_cards.length - 1]);
-              }
-              _wrapper.html(_out);
-            });
-          }
+              _col++;
+            }
+            if (_cards.length & 1) {
+              _out.push(_cards[_cards.length - 1]);
+            }
+            _wrapper.html(_out);
+          });
         },
 
       });
