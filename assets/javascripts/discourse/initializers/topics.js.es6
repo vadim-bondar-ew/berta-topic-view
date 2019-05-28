@@ -46,7 +46,6 @@ export default {
 
         @observes('topics.[]')
         masonryObserver() {
-          console.log("111");
           Ember.run.scheduleOnce('afterRender', this, () => {
             console.log('updated collection');
             let _wrapper = this.$(".mansory"),
@@ -78,6 +77,11 @@ export default {
 
         @on('init')
         setup() {
+          Ember.run.scheduleOnce('afterRender', this, this.applyOrdering);
+        },
+
+        @on('didInsertElement')
+        setupListStyle() {
           Ember.run.scheduleOnce('afterRender', this, this.applyOrdering);
         },
 
