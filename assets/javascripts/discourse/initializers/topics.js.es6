@@ -56,6 +56,12 @@ export default {
           Ember.run.schedule('afterRender', this, this.applyOrdering);
         },
 
+        @on('didInsertElement')
+        setupListStyle() {
+          Ember.run.schedule('afterRender', this, this.applyOrdering);
+          console.log("Render");
+        },
+
         @on('init')
         _setupProperties() {
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
