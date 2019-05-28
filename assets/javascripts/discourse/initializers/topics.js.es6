@@ -58,7 +58,7 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
-          Ember.run.schedule('afterRender', this, this.applyOrdering);
+          Ember.run.scheduleOnce('afterRender', this, this.applyOrdering);
           console.log("Render");
         },
 
@@ -73,6 +73,7 @@ export default {
 
         applyOrdering() {
           var screenWidth = this.$(window).innerWidth() / 2;
+          console.log(this.$());
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
           } else {
