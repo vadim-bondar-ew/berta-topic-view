@@ -66,6 +66,20 @@ export default {
               _out.push(_cards[_cards.length - 1]);
             }
             _wrapper.html(_out);
+
+            var screenWidth = this.$(window).innerWidth() / 2;
+            this.$(".topic-list-item").each(function( index ) {
+              this.$().removeClass("right-column");
+              this.$().removeClass("left-column");
+
+              if (this.$().offset().left > screenWidth) {
+                this.$().addClass("right-column");
+              } else {
+                this.$().addClass("left-column");
+              }
+
+              this.$().append(this.$("<div class='arrow'></div>"));
+            });
           });
         },
 
@@ -95,7 +109,6 @@ export default {
         },
 
         applyOrdering() {
-          console.log("Render item");
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
