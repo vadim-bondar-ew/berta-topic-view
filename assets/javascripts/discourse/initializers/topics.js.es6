@@ -67,6 +67,8 @@ export default {
             }
             _wrapper.html(_out);
 
+            console.log('observer list');
+
             this.$(".topic-list-item").removeClass("right-column left-column");
             var screenWidth = this.$(window).innerWidth() / 2;
             this.$(".topic-list-item").each(function( index ) {
@@ -106,6 +108,7 @@ export default {
         },
 
         applyOrdering() {
+          console.log("Ordering");
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
