@@ -67,19 +67,16 @@ export default {
             }
             _wrapper.html(_out);
 
+            this.$(".topic-list-item").removeClass("right-column left-column");
             var screenWidth = this.$(window).innerWidth() / 2;
             this.$(".topic-list-item").each(function( index ) {
-              $(this).removeClass("right-column");
-              $(this).removeClass("left-column");
-
               if ($(this).offset().left > screenWidth) {
                 $(this).addClass("right-column");
               } else {
                 $(this).addClass("left-column");
               }
-
-              $(this).append($("<div class='arrow'></div>"));
             });
+            this.$(".topic-list-item").append($("<div class='arrow'></div>"));
           });
         },
 
@@ -109,12 +106,12 @@ export default {
         },
 
         applyOrdering() {
-          var screenWidth = this.$(window).innerWidth() / 2;
-          if (this.$().offset().left > screenWidth) {
-            this.$().addClass("right-column");
-          } else {
-            this.$().addClass("left-column");
-          }
+          // var screenWidth = this.$(window).innerWidth() / 2;
+          // if (this.$().offset().left > screenWidth) {
+          //   this.$().addClass("right-column");
+          // } else {
+          //   this.$().addClass("left-column");
+          // }
         }
 
       });
