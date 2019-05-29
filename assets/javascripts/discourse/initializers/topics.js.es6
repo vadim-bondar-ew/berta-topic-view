@@ -42,7 +42,6 @@ export default {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
           }
-          console.log("init list");
         },
 
         @observes('topics.[]')
@@ -110,12 +109,21 @@ export default {
 
         applyOrdering() {
           console.log("Ordering");
+          // var screenWidth = this.$(window).innerWidth() / 2;
+          // if (this.$().offset().left > screenWidth) {
+          //   this.$().addClass("right-column");
+          // } else {
+          //   this.$().addClass("left-column");
+          // }
+
+          this.$().removeClass("right-column left-column");
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
           } else {
             this.$().addClass("left-column");
           }
+          this.$().append($("<div class='arrow'></div>"));
         }
 
       });
