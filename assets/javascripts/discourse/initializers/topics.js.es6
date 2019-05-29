@@ -39,31 +39,15 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
-          console.log("didInsert");
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
           }
         },
 
-        @on('didRender')
-        render() {
-          // this.$(".topic-list-item").removeClass("right-column left-column");
-          var screenWidth = this.$(window).innerWidth() / 2;
-          this.$(".topic-list-item").each(function( index ) {
-            if ($(this).offset().left > screenWidth) {
-              $(this).addClass("right-column");
-            } else {
-              $(this).addClass("left-column");
-            }
-          });
-          // this.$(".topic-list-item").append($("<div class='arrow'></div>"));
-        },
-
         @observes('topics.[]')
         masonryObserver() {
           Ember.run.scheduleOnce('afterRender', this, () => {
-            console.log('updated collection');
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
@@ -82,6 +66,17 @@ export default {
               _out.push(_cards[_cards.length - 1]);
             }
             _wrapper.html(_out);
+
+            this.$(".topic-list-item").removeClass("right-column left-column");
+            var screenWidth = this.$(window).innerWidth() / 2;
+            this.$(".topic-list-item").each(function( index ) {
+              if ($(this).offset().left > screenWidth) {
+                $(this).addClass("right-column");
+              } else {
+                $(this).addClass("left-column");
+              }
+            });
+            this.$(".topic-list-item").append($("<div class='arrow'></div>"));
           });
         },
 
@@ -111,7 +106,6 @@ export default {
         },
 
         applyOrdering() {
-          console.log("Ordering");
           var screenWidth = this.$(window).innerWidth() / 2;
           if (this.$().offset().left > screenWidth) {
             this.$().addClass("right-column");
