@@ -100,10 +100,10 @@ export default {
         _setupProperties() {
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.set('tagName', 'div');
+            this.append(this.$("<div class='arrow'></div>"));
           } else {
             this.set('tagName', 'tr');
           }
-          this.append(this.$("<div class='arrow'></div>"));
         },
 
         applyOrdering() {
