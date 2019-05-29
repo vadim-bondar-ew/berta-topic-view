@@ -46,7 +46,7 @@ export default {
 
         @observes('topics.[]')
         masonryObserver() {
-          Ember.run.schedule('afterRender', this, () => {
+          Ember.run.scheduleOnce('afterRender', this, () => {
             console.log('updated collection');
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
@@ -66,8 +66,6 @@ export default {
               _out.push(_cards[_cards.length - 1]);
             }
             _wrapper.html(_out);
-
-            console.log('observer list');
 
             // this.$(".topic-list-item").removeClass("right-column left-column");
             // var screenWidth = this.$(window).innerWidth() / 2;
