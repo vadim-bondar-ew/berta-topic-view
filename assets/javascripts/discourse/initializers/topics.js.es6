@@ -46,7 +46,7 @@ export default {
 
         @observes('topics.[]')
         masonryObserver() {
-          Ember.run.scheduleOnce('afterRender', this, () => {
+          Ember.run.schedule('afterRender', this, () => {
             console.log('updated collection');
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
@@ -115,15 +115,6 @@ export default {
           // } else {
           //   this.$().addClass("left-column");
           // }
-
-          this.$().removeClass("right-column left-column");
-          var screenWidth = this.$(window).innerWidth() / 2;
-          if (this.$().offset().left > screenWidth) {
-            this.$().addClass("right-column");
-          } else {
-            this.$().addClass("left-column");
-          }
-          this.$().append($("<div class='arrow'></div>"));
         }
 
       });
