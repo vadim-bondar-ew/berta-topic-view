@@ -15,6 +15,7 @@ export default {
           Ember.run.scheduleOnce('afterRender', this, () => {
             // this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
 
+            this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
@@ -32,6 +33,7 @@ export default {
             if (_cards.length & 1) {
               _out.push(_cards[_cards.length - 1]);
             }
+
             _wrapper.html(_out);
           });
         },
@@ -48,6 +50,7 @@ export default {
         masonryObserver() {
           Ember.run.scheduleOnce('afterRender', this, () => {
             console.log('updated collection');
+            this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
@@ -100,7 +103,6 @@ export default {
         _setupProperties() {
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.set('tagName', 'div');
-            this.append(this.$("<div class='arrow'></div>"));
           } else {
             this.set('tagName', 'tr');
           }
@@ -108,12 +110,12 @@ export default {
 
         applyOrdering() {
           console.log("Ordering");
-          // var screenWidth = this.$(window).innerWidth() / 2;
-          // if (this.$().offset().left > screenWidth) {
-          //   this.$().addClass("right-column");
-          // } else {
-          //   this.$().addClass("left-column");
-          // }
+          var screenWidth = this.$(window).innerWidth() / 2;
+          if (this.$().offset().left > screenWidth) {
+            this.$().addClass("right-column");
+          } else {
+            this.$().addClass("left-column");
+          }
         }
 
       });
