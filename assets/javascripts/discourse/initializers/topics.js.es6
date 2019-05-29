@@ -106,12 +106,12 @@ export default {
         },
 
         applyOrdering() {
-          // var screenWidth = this.$(window).innerWidth() / 2;
-          // if (this.$().offset().left > screenWidth) {
-          //   this.$().addClass("right-column");
-          // } else {
-          //   this.$().addClass("left-column");
-          // }
+          var screenWidth = this.$(window).innerWidth() / 2;
+          if (this.$().offset().left > screenWidth) {
+            this.$().addClass("right-column");
+          } else {
+            this.$().addClass("left-column");
+          }
         }
 
       });
