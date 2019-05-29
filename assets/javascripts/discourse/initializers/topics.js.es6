@@ -48,24 +48,24 @@ export default {
         @observes('topics.[]')
         masonryObserver() {
           Ember.run.scheduleOnce('afterRender', this, () => {
-            let _wrapper = this.$(".mansory"),
-                _cards = this.$(".topic-list-item"),
-                _cols = 2,
-                _out = [],
-                _col = 0;
-
-            while(_col < _cols) {
-              for (let i = 0; i < _cards.length; i += _cols) {
-                let _val = _cards[i + _col];
-                if (_val !== undefined)
-                  _out.push(_val);
-              }
-              _col++;
-            }
-            if (_cards.length & 1) {
-              _out.push(_cards[_cards.length - 1]);
-            }
-            _wrapper.html(_out);
+            let _wrapper = this.$(".mansory");
+            //     _cards = this.$(".topic-list-item"),
+            //     _cols = 2,
+            //     _out = [],
+            //     _col = 0;
+            //
+            // while(_col < _cols) {
+            //   for (let i = 0; i < _cards.length; i += _cols) {
+            //     let _val = _cards[i + _col];
+            //     if (_val !== undefined)
+            //       _out.push(_val);
+            //   }
+            //   _col++;
+            // }
+            // if (_cards.length & 1) {
+            //   _out.push(_cards[_cards.length - 1]);
+            // }
+            _wrapper.html(this.$(".topic-list-item"));
 
             this.$(".topic-list-item").removeClass("right-column left-column");
             var screenWidth = this.$(window).innerWidth() / 2;
