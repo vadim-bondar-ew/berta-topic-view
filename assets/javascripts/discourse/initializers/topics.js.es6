@@ -14,7 +14,7 @@ export default {
         setup() {
           Ember.run.scheduleOnce('afterRender', this, () => {
             // this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
-            
+
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
@@ -39,10 +39,16 @@ export default {
 
         @on('didInsertElement')
         setupListStyle() {
+          console.log("didInsert");
           if( $("#suggested-topics").length == 0 && $(".user-messages-page").length == 0 ) {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
           }
+        },
+
+        @on('didRender')
+        render() {
+          console.log("didRender");
         },
 
         @observes('topics.[]')
