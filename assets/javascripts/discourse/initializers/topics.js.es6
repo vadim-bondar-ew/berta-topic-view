@@ -69,16 +69,16 @@ export default {
 
             console.log('observer list');
 
-            this.$(".topic-list-item").removeClass("right-column left-column");
-            var screenWidth = this.$(window).innerWidth() / 2;
-            this.$(".topic-list-item").each(function( index ) {
-              if ($(this).offset().left > screenWidth) {
-                $(this).addClass("right-column");
-              } else {
-                $(this).addClass("left-column");
-              }
-            });
-            this.$(".topic-list-item").append($("<div class='arrow'></div>"));
+            // this.$(".topic-list-item").removeClass("right-column left-column");
+            // var screenWidth = this.$(window).innerWidth() / 2;
+            // this.$(".topic-list-item").each(function( index ) {
+            //   if ($(this).offset().left > screenWidth) {
+            //     $(this).addClass("right-column");
+            //   } else {
+            //     $(this).addClass("left-column");
+            //   }
+            // });
+            // this.$(".topic-list-item").append($("<div class='arrow'></div>"));
           });
         },
 
