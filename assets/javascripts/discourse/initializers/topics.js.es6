@@ -48,7 +48,16 @@ export default {
 
         @on('didRender')
         render() {
-          console.log("didRender");
+          this.$(".topic-list-item").removeClass("right-column left-column");
+          var screenWidth = this.$(window).innerWidth() / 2;
+          this.$(".topic-list-item").each(function( index ) {
+            if ($(this).offset().left > screenWidth) {
+              $(this).addClass("right-column");
+            } else {
+              $(this).addClass("left-column");
+            }
+          });
+          this.$(".topic-list-item").append($("<div class='arrow'></div>"));
         },
 
         @observes('topics.[]')
@@ -73,17 +82,6 @@ export default {
               _out.push(_cards[_cards.length - 1]);
             }
             _wrapper.html(_out);
-
-            // this.$(".topic-list-item").removeClass("right-column left-column");
-            // var screenWidth = this.$(window).innerWidth() / 2;
-            // this.$(".topic-list-item").each(function( index ) {
-            //   if ($(this).offset().left > screenWidth) {
-            //     $(this).addClass("right-column");
-            //   } else {
-            //     $(this).addClass("left-column");
-            //   }
-            // });
-            // this.$(".topic-list-item").append($("<div class='arrow'></div>"));
           });
         },
 
