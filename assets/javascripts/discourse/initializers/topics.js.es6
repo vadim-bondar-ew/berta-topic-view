@@ -103,6 +103,7 @@ export default {
           } else {
             this.set('tagName', 'tr');
           }
+          this.$().append(this.$("<div class='arrow'></div>"));
         },
 
         applyOrdering() {
