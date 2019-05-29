@@ -8,7 +8,7 @@ register_asset 'stylesheets/topics_mobile.scss'
 
 after_initialize do
   add_to_class :post, :excerpt_for_topic do
-    Post.excerpt(cooked, 50, strip_links: true)
+    Post.excerpt(cooked, 200, strip_links: true)
   end
   add_to_serializer(:listable_topic, :include_excerpt?) { true }
 end
