@@ -42,6 +42,7 @@ export default {
             this.$(".topic-list-item").wrapAll("<div class='mansory'></div>");
             this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
           }
+          console.log("init list");
         },
 
         @observes('topics.[]')
