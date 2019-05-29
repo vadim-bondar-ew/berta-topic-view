@@ -14,8 +14,7 @@ export default {
         setup() {
           Ember.run.scheduleOnce('afterRender', this, () => {
             // this.$('.mansory .right-column:nth-child(4)').addClass("top-margin");
-
-            this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
+            
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
@@ -50,7 +49,6 @@ export default {
         masonryObserver() {
           Ember.run.scheduleOnce('afterRender', this, () => {
             console.log('updated collection');
-            this.$(".topic-list-item").append(this.$("<div class='arrow'></div>"));
             let _wrapper = this.$(".mansory"),
                 _cards = this.$(".topic-list-item"),
                 _cols = 2,
